@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // setTimeout(() => {
-    //   this.boot = true;
-    // }, 500);
+    setTimeout(() => {
+      this.boot = true;
+      $(".cp_load").fadeIn().animate({ height: '0px' });
+    }, 2500);
 
   }
 }
