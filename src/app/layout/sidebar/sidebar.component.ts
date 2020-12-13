@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  @Input() side: boolean;
+  @Input() side: boolean = true;
 
 
   extraParameter: any;
