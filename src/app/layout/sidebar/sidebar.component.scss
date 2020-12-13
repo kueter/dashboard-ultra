@@ -6,23 +6,60 @@
   height: 100vh;
   box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
   flex-direction: column;
-  transition: all .3s ease;
-  background-color: #2c646f;
+  transition: all 0.3s ease;
+  background-color: #008080;
 
   ._header {
-
     .logo {
       display: block;
       font-size: 1.25rem;
       line-height: 1.5;
-      padding: .9125rem .5rem;
-      transition: width .3s ease-in-out;
+      padding: 0.9125rem 0.5rem;
+      transition: width 0.3s ease-in-out;
       white-space: nowrap;
       border-bottom: 1px solid #b5bac0;
       color: #fff;
 
       i {
         margin-left: 1.5rem;
+      }
+    }
+
+    .user {
+      img {
+        margin-top: .4rem;
+        margin-left: 1.4rem;
+        height: 2.1rem;
+        width: 2.1rem;
+        box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23)!important;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+    }
+
+    hr {
+      margin: 10px;
+      background-color: #b5bac0;
+    }
+  }
+
+  ._body {
+    padding-top: 1.5rem;
+    .menus {
+      ul {
+        list-style: none;
+        margin-left: -.7rem;
+        li  {
+
+            a {
+              display: block;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                i {
+                    color: #fff;
+                }
+            }
+        }
       }
     }
   }
