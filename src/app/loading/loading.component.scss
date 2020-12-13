@@ -17,6 +17,12 @@
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+
+  i {
+    position: absolute;
+    color: #fff;
+    animation: anima-icon 1s infinite alternate;
+  }
 }
 
 .element-clip {
@@ -37,3 +43,16 @@
   }
 }
 
+@keyframes anima-icon {
+  0% {
+    font-size: 2rem;
+    top: 35%;
+    left: 34%;
+  }
+
+  100% {
+    top: 42%;
+    left: 42%;
+    font-size: 1rem;
+  }
+}
