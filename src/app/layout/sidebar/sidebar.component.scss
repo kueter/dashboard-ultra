@@ -1,0 +1,11 @@
+.side-bar {
+  display: flex;
+  z-index: 200;
+  overflow: hidden;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
+  flex-direction: column;
+  transition: all .3s ease;
+  background-color: #2c646f;
+}

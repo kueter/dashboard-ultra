@@ -18,7 +18,7 @@ export class SidebarComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.extraParameter = this.activatedRoute.snapshot.firstChild.data.extraParameter;
+    // this.extraParameter = this.activatedRoute.snapshot.firstChild.data.extraParameter;
   }
 
   toggleSideBar() {
