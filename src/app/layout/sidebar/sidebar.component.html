@@ -17,7 +17,7 @@
      <div class="menus">
           <ul>
             <li>
-              <a ><i class="fal fa-th"></i> <span>{{'Widgets'}}</span></a>
+              <a ><i class="fal fa-th"></i> <span [ngStyle]="side === true ?{'display':'none'}:{'display':''}" >{{'Widgets'}}</span></a>
             </li>
             <li>
               <a ><i class="fal fa-clone"></i></a>
