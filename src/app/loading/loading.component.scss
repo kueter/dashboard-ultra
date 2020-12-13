@@ -3,7 +3,7 @@
   position: relative;
   height: 600px;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #2b646f;
 }
 
 .contain {
@@ -17,16 +17,10 @@
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-
-  i {
-    position: absolute;
-    color: #fff;
-    animation: anima-icon 1s infinite alternate;
-  }
 }
 
 .element-clip {
-  background-color: #2b646f;
+  background-color: #fff;
   color: #fff;
   height: inherit;
   animation: anima-clip 1s infinite alternate;
@@ -43,16 +37,3 @@
   }
 }
 
-@keyframes anima-icon {
-  0% {
-    font-size: 2rem;
-    top: 35%;
-    left: 34%;
-  }
-
-  100% {
-    top: 42%;
-    left: 42%;
-    font-size: 1rem;
-  }
-}
