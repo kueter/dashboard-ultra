@@ -1,3 +1,5 @@
+import { Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  sideState = false;
+  @Output() side = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+  toggleSideBar() {
+    this.sideState = !this.sideState;
+    this.side.emit(this.sideState);
+  }
+
 
 }

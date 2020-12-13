@@ -19,6 +19,12 @@
       transition: width .3s ease-in-out;
       white-space: nowrap;
       border-bottom: 1px solid #fff;
+      color: #fff;
+
+      i {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
     }
   }
 }

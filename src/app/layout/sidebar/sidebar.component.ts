@@ -9,9 +9,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-
   sideState = false;
   @Output() side = new EventEmitter();
+
 
   extraParameter: any;
 
@@ -21,8 +21,7 @@ export class SidebarComponent implements OnInit {
     // this.extraParameter = this.activatedRoute.snapshot.firstChild.data.extraParameter;
   }
 
-  toggleSideBar() {
-    this.sideState = !this.sideState;
-    this.side.emit(this.sideState);
-  }
+
+
+
 }
