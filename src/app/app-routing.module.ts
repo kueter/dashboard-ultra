@@ -5,7 +5,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch:'full'},
-    { path: '', loadChildren: () => import('./layout/elements/not-found/not-found.module').then(m => m.NotFoundModule) },
+    { path: '**', loadChildren: () => import('./layout/elements/not-found/not-found.module').then(m => m.NotFoundModule) },
     { path: 'dashboard', component: LayoutComponent,
       children: [
           { path: '', redirectTo: 'widgets', pathMatch: 'full'},
