@@ -5,7 +5,6 @@
       <a class="logo">
          <i class="fal fa-lightbulb"></i>
       </a>
-
       <a class="user">
           <img src="../../../assets/img/AF2.png" alt="">
       </a>
@@ -17,25 +16,28 @@
      <div class="menus">
           <ul>
             <li>
-              <a ><i class="fal fa-th"></i> <span [ngStyle]="side === true ?{'display':'none'}:{'display':''}" >{{'Widgets'}}</span></a>
+              <a ><i class="fal fa-th"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Widgets'}}</span></a>
             </li>
             <li>
-              <a ><i class="fal fa-clone"></i></a>
+              <a ><i class="fal fa-clone"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Layouts'}}</span></a>
             </li>
             <li>
-              <a ><i class="fal fa-chart-pie"></i></a>
+              <a ><i class="fal fa-chart-pie"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Charts'}}</span></a>
             </li>
             <li>
-              <a ><i class="fal fa-edit"></i></a>
+              <a ><i class="fal fa-edit"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Forms'}}</span></a>
             </li>
             <li>
-              <a ><i class="fal fa-table"></i></a>
+              <a ><i class="fal fa-tree"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'UI Elements'}}</span></a>
             </li>
             <li>
-              <a ><i class="fal fa-calendar"></i></a>
+              <a ><i class="fal fa-table"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Tables'}}</span></a>
             </li>
             <li>
-              <a ><i class="fal fa-book"></i></a>
+              <a ><i class="fal fa-calendar"></i><span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Calendar'}}</span></a>
+            </li>
+            <li>
+              <a ><i class="fal fa-book"></i><span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Library'}}</span></a>
             </li>
           </ul>
      </div>
