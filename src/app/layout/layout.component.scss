@@ -1,0 +1,13 @@
+.__main_outlet {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  z-index: 8;
+  padding: 60px 0 0 280px;
+  transition: all .2s;
+}
+
+.inner__o {
+  padding: 15px 15px 20px;
+  flex: 1;
+}
