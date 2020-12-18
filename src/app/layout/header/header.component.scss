@@ -12,8 +12,8 @@
   .__normal_size {
     display: flex;
     align-items: center;
-    align-content: center;
-    flex: 1;
+    justify-content: space-between;
+    width: 100%;
     height: 60px;
     transition: all .2s;
 
@@ -22,26 +22,29 @@
       align-items: center;
       padding: 0 0 0 1.5rem;
       margin-left: 2rem;
+      width: 30%;
 
       .__menu {
         display: flex;
         justify-content: space-between;
-      }
 
-      .__item {
-        width: 70px;
-        padding: 3%;
-        height: 100%;
-        display: flex;
-        color: #b5bac0;
-        justify-content: space-between;
+        .__item {
+          width: 70px;
+          padding: 3%;
+          height: 100%;
+          display: flex;
+          color: #b5bac0;
+          justify-content: space-between;
 
-        span {
-          font-size: 15px;
-          color: #2c646f;
+          span {
+            font-size: 15px;
+            color: #2c646f;
+          }
+
         }
-
       }
+
+
     }
 
     .middle {
@@ -49,21 +52,21 @@
       position: relative;
       input {
         width: 100%;
-        background-color: #b5bac0;
+        border:1px solid #b5bac0;
         outline: none;
         border-radius: .35rem;
         padding: .35rem 2rem;
         color: #565758;
-        border:none;
       }
 
       ::placeholder {
         color:#565758;
+        font-size: 12px;
       }
 
       i {
         position: absolute;
-        color: #565758;
+        color: #767779;
         left: 3%;
         top: 30%;
       }
@@ -74,19 +77,41 @@
       display: flex;
       margin-left: auto;
       padding: 0 1.5rem 0 0;
-
+      width: 20%;
        .user_ID{
         width: 30px;
         height: 30px;
         border: 2px solid #b5bac0;
         overflow: hidden;
         padding: 0%;
-        border-radius: .35rem;
+        border-radius: 50%;
         img.square {
             width: 100%;
             height: 100%;
         }
       }
+
+      .__menu {
+        display: flex;
+        justify-content: space-between;
+
+        .__item {
+          width: 70px;
+          padding: 3%;
+          height: 100%;
+          display: flex;
+          color: #b5bac0;
+          justify-content: space-between;
+
+          span {
+            font-size: 15px;
+            color: #2c646f;
+          }
+
+        }
+      }
+
+
     }
 
 
