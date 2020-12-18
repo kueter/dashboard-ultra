@@ -1,4 +1,4 @@
-import { query, style, animate, group, trigger  } from '@angular/animations';
+import { query, style, animate, group, trigger, transition  } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
@@ -32,8 +32,11 @@ const right = [
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
   animations: [
-    trigger('outletAnimation',[
-
+    trigger('outletAnimation', [
+        transition('* => widgets', left),
+        transition('widgets => *', right),
+        transition('layout => charts,forms', right),
+        transition('charts,forms => layout', left),
     ])
   ]
 })
