@@ -1,4 +1,4 @@
-import { query, style, animate, group  } from '@angular/animations';
+import { query, style, animate, group, trigger  } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
@@ -31,7 +31,11 @@ const right = [
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
-  animations: []
+  animations: [
+    trigger('outletAnimation',[
+
+    ])
+  ]
 })
 export class LayoutComponent implements OnInit {
   sideState: boolean = false;
