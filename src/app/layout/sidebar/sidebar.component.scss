@@ -4,7 +4,7 @@
   overflow: hidden;
   position: fixed;
   height: 100vh;
-  box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.15);
   flex-direction: column;
   transition: all 0.3s ease;
   background-color: #008080;
@@ -17,7 +17,7 @@
       padding: 0.9125rem 0.5rem;
       transition: width 0.3s ease-in-out;
       white-space: nowrap;
-      border-bottom: 1px solid #b5bac0;
+      border-bottom: 1px solid #e8e1e1;
       color: #fff;
 
       i {
@@ -39,7 +39,7 @@
 
     hr {
       margin: 10px;
-      background-color: #b5bac0;
+      background-color: #e8e1e1;
     }
   }
 
