@@ -35,8 +35,24 @@ const right = [
     trigger('outletAnimation', [
         transition('* => widgets', left),
         transition('widgets => *', right),
-        transition('layout => forms', right),
-        transition('forms => layout', left),
+        transition('layouts => forms', right),
+        transition('layouts => charts', right),
+        transition('layouts => tables', right),
+        transition('layouts => scheduler', right),
+        transition('layouts => booker', right),
+        transition('layouts => composants', right),
+        transition('charts => layouts', left),
+        transition('charts => forms', right),
+        transition('charts => tables', right),
+        transition('charts => composants', right),
+        transition('charts => scheduler', right),
+        transition('charts => booker', right),
+        transition('forms  => layouts', left),
+        transition('forms  => charts', left),
+        transition('forms  => tables', right),
+        transition('forms  => scheduler', right),
+        transition('forms  => composants', right),
+        transition('forms  => booker', right),
     ])
   ]
 })

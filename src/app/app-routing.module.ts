@@ -15,6 +15,7 @@ const routes: Routes = [
       { path: 'tables', loadChildren: () => import('./layout/elements/tables-ui/tables-ui.module').then(m => m.TablesUiModule), data:{ animation: 'tables'} },
       { path: 'composants', loadChildren: () => import('./layout/elements/composants-ui/composants-ui.module').then(m => m.ComposantsUiModule), data:{ animation: 'composants'} },
       { path: 'scheduler', loadChildren: () => import('./layout/elements/scheduler-ui/scheduler-ui.module').then(m => m.SchedulerUiModule), data:{ animation: 'scheduler'} },
+      { path: 'booker', loadChildren: () => import('./layout/elements/booker/booker.module').then(m => m.BookerModule), data:{ animation: 'booker'} },
       // { path: '**', loadChildren: () => import('./layout/elements/not-found/not-found.module').then(m => m.NotFoundModule) },
         ]
     }
