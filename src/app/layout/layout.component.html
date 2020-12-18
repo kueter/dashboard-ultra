@@ -1,2 +1,12 @@
 <app-header (side)="getSide($event)"></app-header>
 <app-sidebar [side]="sideState"></app-sidebar>
+
+<div class="__main_outlet" [ngStyle]="sideState === true ? {'padding-left': '80px'}: {'':''}">
+  <div class="inner__o">
+
+    <div [@outletAnimation]="preparedRoute(o)">
+      <router-outlet #o="outlet"></router-outlet>
+    </div>
+
+  </div>
+</div>
