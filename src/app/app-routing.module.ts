@@ -4,10 +4,9 @@ import { LayoutComponent } from './layout/layout.component';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: 'dashboard/widgets', pathMatch:'full'},
+    { path: '', redirectTo: 'dashboard', pathMatch:'full'},
     { path: 'dashboard', component: LayoutComponent,
       children: [
-          { path: '' , redirectTo: 'widgets', pathMatch: 'full' },
           { path: 'widgets', loadChildren: () => import('./layout/elements/widgets-ui/widgets-ui.module').then(m => m.WidgetsUiModule), data:{ animation: 'widgets'} },
           { path: 'layouts', loadChildren: () => import('./layout/elements/layouts-ui/layouts-ui.module').then(m => m.LayoutsUiModule), data:{ animation: 'layouts'} },
           { path: 'forms', loadChildren: () => import('./layout/elements/forms-ui/forms-ui.module').then(m => m.FormsUiModule), data:{ animation: 'forms'} },

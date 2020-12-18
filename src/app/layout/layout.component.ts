@@ -35,8 +35,8 @@ const right = [
     trigger('outletAnimation', [
         transition('* => widgets', left),
         transition('widgets => *', right),
-        transition('layout => charts,forms', right),
-        transition('charts,forms => layout', left),
+        transition('layout => forms', right),
+        transition('forms => layout', left),
     ])
   ]
 })
