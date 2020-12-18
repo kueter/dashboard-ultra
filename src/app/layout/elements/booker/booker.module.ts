@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BookerComponent } from './booker.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [BookerComponent],
   imports: [
     CommonModule
   ]
