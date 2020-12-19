@@ -1,4 +1,5 @@
 import { query, style, animate, group, trigger, transition  } from '@angular/animations';
+import { AfterContentChecked, ChangeDetectorRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
@@ -56,19 +57,48 @@ const right = [
     ])
   ]
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent implements OnInit, AfterContentChecked  {
   sideState: boolean = false;
-
   bread: any;
 
 
-  constructor() { }
+  constructor(private cdRef: ChangeDetectorRef) { }
+
 
   ngOnInit(): void {
   }
 
+  ngAfterContentChecked(): void {
+    this.cdRef.detectChanges();
+  }
+
+
   preparedRoute(outlet: RouterOutlet) {
-    console.log(outlet);
+
+    switch (outlet.activatedRouteData.animation) {
+      case 'widgets':
+        this.bread = {path: 'Widgets', icon: 'fa-cube'};
+        break;
+      case 'layouts':
+        this.bread = {path: 'Layouts', icon: 'fa-clone'};
+        break;
+      case 'charts':
+          this.bread = {path: 'Charts', icon: 'fa-chart-pie'};
+          break;
+      case 'forms':
+            this.bread = {path: 'Forms', icon: 'fa-edit'};
+          break;
+      case 'composants':
+            this.bread = {path: 'Elements', icon: 'fa-tree'};
+          break;
+      case 'tables':
+            this.bread = {path: 'Tables', icon: 'fa-table'};
+          break;
+
+      default:
+        break;
+    }
+
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 
