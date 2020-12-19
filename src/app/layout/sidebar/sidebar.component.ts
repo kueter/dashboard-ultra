@@ -18,6 +18,8 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     // this.extraParameter = this.activatedRoute.snapshot.firstChild.data.extraParameter;
+
+    // console.log(this.extraParameter);
   }
 
 

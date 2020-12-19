@@ -10,4 +10,31 @@
 .inner__o {
   padding: 15px 15px 20px;
   flex: 1;
+
+  .breadcrumb-d {
+    margin-bottom: 1rem;
+    width: 30%;
+    margin-right: auto;
+    align-items: center;
+    display: flex;
+    .ind_box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background-color: #fff;
+      border-radius: .25rem;
+      box-shadow: 0px .7px 0.16875rem 0.1rem rgba(0, 0, 0, 0.1);
+      i {
+        color: #46957b;
+      }
+    }
+    .current_path {
+
+    }
+  }
 }
+
+
