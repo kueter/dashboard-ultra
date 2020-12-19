@@ -94,6 +94,14 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
       case 'tables':
             this.bread = {path: 'Tables', icon: 'fa-table'};
           break;
+      case 'scheduler':
+            this.bread = {path: 'Scheduler', icon: 'fa-calendar'};
+          break;
+      case 'booker':
+            this.bread = {path: 'Library', icon: 'fa-book'};
+          break;
+
+
 
       default:
         break;
