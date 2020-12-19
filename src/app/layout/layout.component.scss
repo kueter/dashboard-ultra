@@ -61,6 +61,7 @@
 
 
 ._chatbox {
+  z-index: 20;
   position: fixed;
   width: 280px;
   bottom: 1%;
@@ -125,4 +126,11 @@
         }
       }
     }
+}
+
+
+._settingbox {
+  z-index: 20;
+  position: fixed;
+  width: 280px;
 }
