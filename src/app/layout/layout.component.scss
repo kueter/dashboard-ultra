@@ -115,8 +115,12 @@
 
         .emoji {
           width: 20%;
-          i {
-            color: #46957b;
+          display: flex;
+          .btn {
+            padding: 0%;
+            i {
+              color: #46957b;
+            }
           }
         }
       }
