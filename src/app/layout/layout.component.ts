@@ -59,12 +59,16 @@ const right = [
 export class LayoutComponent implements OnInit {
   sideState: boolean = false;
 
+  bread: any;
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   preparedRoute(outlet: RouterOutlet) {
+    console.log(outlet);
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 
