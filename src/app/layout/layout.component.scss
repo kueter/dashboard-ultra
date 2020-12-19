@@ -61,6 +61,7 @@
 
 
 ._chatbox {
+  display: none;
   z-index: 20;
   position: fixed;
   width: 280px;
@@ -132,5 +133,14 @@
 ._settingbox {
   z-index: 20;
   position: fixed;
-  width: 280px;
+  width: 250px;
+  height: 300px;
+  background-color: #46957b;
+  top: 15%;
+  right: 1%;
+  .card {
+    .card-body  {
+
+    }
+  }
 }
