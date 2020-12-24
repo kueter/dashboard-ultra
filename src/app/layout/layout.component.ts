@@ -71,9 +71,6 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
   ngOnInit(): void {
   }
 
-
-
-
   preparedRoute(outlet: RouterOutlet) {
 
     switch (outlet.activatedRouteData.animation) {
