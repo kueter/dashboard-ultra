@@ -61,13 +61,11 @@
 
 
 ._chatbox {
-  display: none;
   z-index: 20;
   position: fixed;
   width: 280px;
-  bottom: 1%;
-  right: 1%;
-  height: 350px;
+  height: 0px;
+  overflow: hidden;
     .card {
       height: 100%;
       border:  2px solid #46957b;

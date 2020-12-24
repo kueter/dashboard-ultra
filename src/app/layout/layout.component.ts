@@ -118,13 +118,13 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
 
   ocBox() {
     $("._chatbox").fadeIn()
-      .css({ top: 0, position: 'fixed' })
-      .animate({ height: '600px' }, 800);
+      .css({ bottom: '1%',right:'1%', position: 'fixed' })
+      .animate({ height: '350px' }, 800);
   }
 
   ccBox() {
     $("._chatbox").fadeOut()
-    .css({ top: 0, position: 'fixed' })
+    .css({ bottom: '1%',right:'1%', position: 'fixed' })
     .animate({ height: '0px' }, 800);
   }
 
