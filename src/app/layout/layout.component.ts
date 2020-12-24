@@ -62,6 +62,7 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
   sideState: boolean = false;
   bread: any;
   icon ='fa-minus-circle';
+  state = false;
 
 
   constructor(private cdRef: ChangeDetectorRef) { }
@@ -131,11 +132,25 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
   }
 
   reduceBox() {
-    $("._chatbox")
-    .css({ bottom: '1%',right:'1%', position: 'fixed' })
-    .animate({ height: '35px' }, 800, () =>{
-        this.icon = 'fa-square'
-    });
+
+    this.state =!this.state;
+
+    if(this.state == true) {
+      $("._chatbox")
+      .css({ bottom: '1%',right:'1%', position: 'fixed' })
+      .animate({ height: '35px' }, 800, () =>{
+          this.icon = 'fa-square'
+      });
+    }
+
+    if(this.state == false) {
+      $("._chatbox")
+      .css({ bottom: '1%',right:'1%', position: 'fixed' })
+      .animate({ height: '350px' }, 800, () => {
+          this.icon = 'fa-minus-circle'
+      });
+    }
+
   }
 
 
