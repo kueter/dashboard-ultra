@@ -132,7 +132,7 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
   reduceBox() {
     $("._chatbox")
     .css({ bottom: '1%',right:'1%', position: 'fixed' })
-    .animate({ height: '30px' }, 800);
+    .animate({ height: '35px' }, 800);
   }
 
 
