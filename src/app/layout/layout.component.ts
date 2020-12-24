@@ -67,6 +67,7 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
 
 
   ngOnInit(): void {
+    this.ocBox();
   }
 
   ngAfterContentChecked(): void {
@@ -126,6 +127,12 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
     $("._chatbox").fadeOut()
     .css({ bottom: '1%',right:'1%', position: 'fixed' })
     .animate({ height: '0px' }, 800);
+  }
+
+  reduceBox() {
+    $("._chatbox")
+    .css({ bottom: '1%',right:'1%', position: 'fixed' })
+    .animate({ height: '30px' }, 800);
   }
 
 
