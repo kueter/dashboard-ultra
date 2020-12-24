@@ -1,6 +1,7 @@
 import { Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { stringify } from 'querystring';
 
 declare var $: any;
 
@@ -29,6 +30,7 @@ export class HeaderComponent implements OnInit {
   toggleSideBar() {
     this.sideState = !this.sideState;
     this.side.emit(this.sideState);
+    localStorage.setItem('state', this.sideState.toString());
   }
 
 

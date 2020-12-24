@@ -20,6 +20,8 @@ export class SidebarComponent implements OnInit {
     // this.extraParameter = this.activatedRoute.snapshot.firstChild.data.extraParameter;
 
     // console.log(this.extraParameter);
+
+    console.log(localStorage.getItem('state'));
   }
 
 
