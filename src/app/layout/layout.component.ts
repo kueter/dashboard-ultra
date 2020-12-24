@@ -71,9 +71,7 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
   ngOnInit(): void {
   }
 
-  ngAfterContentChecked(): void {
-    this.cdRef.detectChanges();
-  }
+
 
 
   preparedRoute(outlet: RouterOutlet) {
@@ -103,9 +101,6 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
       case 'booker':
             this.bread = {path: 'Library', icon: 'fa-book'};
           break;
-
-
-
       default:
         break;
     }
@@ -146,6 +141,7 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
 
   }
 
-
-
+  ngAfterContentChecked(): void {
+    this.cdRef.detectChanges();
+  }
 }
