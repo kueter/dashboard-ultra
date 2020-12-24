@@ -27,6 +27,7 @@ const right = [
   ]),
 ];
 
+declare var $: any;
 
 @Component({
   selector: 'app-layout',
@@ -113,5 +114,19 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
   getSide(event) {
       this.sideState = event;
   }
+
+
+  ocBox() {
+    $("._chatbox").fadeIn()
+      .css({ top: 0, position: 'fixed' })
+      .animate({ height: '600px' }, 800);
+  }
+
+  ccBox() {
+    $("._chatbox").fadeOut()
+    .css({ top: 0, position: 'fixed' })
+    .animate({ height: '0px' }, 800);
+  }
+
 
 }
