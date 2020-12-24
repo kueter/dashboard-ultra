@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
     setTimeout(() => {
       this.boot = true;
-      $(".cp_load").fadeIn().animate({ height: '0px' });
+      $(".cp_load").animate({ height: '0px' });
     }, 2500);
 
   }
