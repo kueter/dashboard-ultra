@@ -28,7 +28,7 @@
             <span>{{'Chat Box'}}</span>
           </div>
           <div class="actions">
-              <button class="btn" (click)="reduceBox()"><i class="fal fa-minus-circle"></i></button>&nbsp;
+              <button class="btn" (click)="reduceBox()"><i [class]="'fal '+ icon"></i></button>&nbsp;
               <button class="btn" (click)="ccBox()"><i class="fal fa-times-circle"></i></button>
           </div>
       </div>

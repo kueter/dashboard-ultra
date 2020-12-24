@@ -61,6 +61,7 @@ declare var $: any;
 export class LayoutComponent implements OnInit, AfterContentChecked  {
   sideState: boolean = false;
   bread: any;
+  icon ='fa-minus-circle';
 
 
   constructor(private cdRef: ChangeDetectorRef) { }
@@ -132,7 +133,9 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
   reduceBox() {
     $("._chatbox")
     .css({ bottom: '1%',right:'1%', position: 'fixed' })
-    .animate({ height: '35px' }, 800);
+    .animate({ height: '35px' }, 800, () =>{
+        this.icon = 'fa-square'
+    });
   }
 
 
