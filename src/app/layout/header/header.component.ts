@@ -2,6 +2,8 @@ import { Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
+declare var $: any;
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -15,6 +17,12 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ocBox() {
+    $("._chatbox").fadeIn()
+      .css({ bottom: '1%',right:'1%', position: 'fixed' })
+      .animate({ height: '350px' }, 800);
   }
 
 
