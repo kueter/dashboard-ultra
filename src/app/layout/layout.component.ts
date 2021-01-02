@@ -59,7 +59,7 @@ declare var $: any;
   ]
 })
 export class LayoutComponent implements OnInit  {
-  sideState: boolean = false;
+
   bread: any;
   icon ='fa-minus-circle';
   state = false;
@@ -104,10 +104,6 @@ export class LayoutComponent implements OnInit  {
     }
 
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
-  }
-
-  getSide(event) {
-      this.sideState = event;
   }
 
   ccBox() {
