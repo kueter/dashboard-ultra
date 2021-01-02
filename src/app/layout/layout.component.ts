@@ -69,6 +69,7 @@ export class LayoutComponent implements OnInit  {
 
 
   ngOnInit(): void {
+    this.lservice.initDb();
   }
 
   preparedRoute(outlet: RouterOutlet) {
