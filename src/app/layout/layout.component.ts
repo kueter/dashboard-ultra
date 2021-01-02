@@ -1,7 +1,7 @@
 import { query, style, animate, group, trigger, transition  } from '@angular/animations';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { take } from 'rxjs/operators';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { filter, take } from 'rxjs/operators';
 import { LayoutService } from './layout.service';
 
 const left = [
@@ -66,17 +66,48 @@ export class LayoutComponent implements OnInit  {
   state = false;
 
 
-  constructor(public lservice: LayoutService) { }
+  constructor(public lservice: LayoutService,private router: Router) { }
 
 
   ngOnInit(): void {
     // this.lservice.initDb();
 
-    this.lservice.breadcrumb.pipe(take(1)).subscribe(
-      (_) => {
-        this.bread = _ ;
-      }
-    )
+    this.router.events.pipe(
+      filter((e) => e instanceof NavigationEnd)
+    ).subscribe((_: any) => {
+      this.setBreadcrumb(_?.url)
+    });
+  }
+
+  setBreadcrumb(bread: string) {
+    switch (bread) {
+      case '/dashboard/widgets':
+        this.bread = {path: 'Widgets', icon: 'fa-cube'};
+        break;
+      case '/dashboard/layouts':
+        this.bread={path: 'Layouts', icon: 'fa-clone'};
+        break;
+      case '/dashboard/charts':
+          this.bread = {path: 'Charts', icon: 'fa-chart-pie'};
+          break;
+      case '/dashboard/forms':
+            this.bread={path: 'Forms', icon: 'fa-edit'};
+          break;
+      case '/dashboard/composants':
+            this.bread={path: 'Elements', icon: 'fa-tree'};
+          break;
+      case '/dashboard/tables':
+            this.bread={path: 'Tables', icon: 'fa-table'};
+          break;
+      case '/dashboard/scheduler':
+            this.bread={path: 'Scheduler', icon: 'fa-calendar'};
+          break;
+      case '/dashboard/booker':
+            this.bread={path: 'Library', icon: 'fa-book'};
+          break;
+      default:
+        break;
+    }
   }
 
   preparedRoute(outlet: RouterOutlet) {
