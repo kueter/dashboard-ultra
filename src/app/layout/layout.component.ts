@@ -126,7 +126,7 @@ export class LayoutComponent implements OnInit  {
   cBoxc() {
     $("._settingbox").fadeIn()
       .css({ top: '20%',right:'1%', position: 'fixed' })
-      .animate({ width: '0px' }, 800);
+      .animate({ width: '0px', right: '-10%' }, 800);
   }
 
 
