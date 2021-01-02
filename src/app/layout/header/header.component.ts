@@ -14,7 +14,9 @@ declare var $: any;
 export class HeaderComponent implements OnInit {
 
 
-  constructor(public lservice: LayoutService) { }
+  constructor(public lservice: LayoutService) {
+
+  }
 
   ngOnInit(): void {
   }

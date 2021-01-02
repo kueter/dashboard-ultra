@@ -123,7 +123,11 @@ export class LayoutComponent implements OnInit  {
 
   // color settings box
 
-
+  cBoxc() {
+    $("._settingbox").fadeIn()
+      .css({ top: '20%',right:'1%', position: 'fixed' })
+      .animate({ width: '0px' }, 800);
+  }
 
 
 
@@ -155,6 +159,8 @@ export class LayoutComponent implements OnInit  {
     }
 
   }
+
+
 
 
 }
