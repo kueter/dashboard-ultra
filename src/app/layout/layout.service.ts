@@ -39,6 +39,9 @@ export class LayoutService {
 
       // others data & reteived data
 
+      layDb.uistates.toArray().then(_=> console.log(_));
+      layDb.nbarcolors.toArray().then(_=> console.log(_));
+      layDb.sbarcolors.toArray().then(_=> console.log(_));
 
   }
 
