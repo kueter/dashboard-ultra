@@ -119,8 +119,8 @@ export class LayoutComponent implements OnInit  {
   }
 
 
-  setSidecolor(item: any) {
-
+  setSidecolor(item: string) {
+    layDb.sbarcolors.update(1, {color: item});
   }
 
 

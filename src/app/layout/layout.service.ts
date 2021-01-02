@@ -34,7 +34,6 @@ export class LayoutService {
     this.state = !this.state;
     this.layoutState.next(this.state);
     layDb.uistates.update(1, {state: this.state});
-    layDb.uistates.toArray().then(_=> console.log(_));
   }
 
   getState() {
