@@ -11,7 +11,7 @@
       </div>
       <div class="current_path">
           <span class="def" [style]="{'color':(lservice?.bgColor|async)}">{{'Dashboard'}}</span>
-          <span class="sep"><i class="fas fa-chevron-right" [style]="{'color':(lservice?.bgColor|async)}"></i></span>
+          <span class="sep"><i class="fal fa-chevron-right" [style]="{'color':(lservice?.bgColor|async)}"></i></span>
           <span class="curr" [style]="{'color':(lservice?.bgColor|async)}">{{bread?.path}}</span>
       </div>
     </div>
@@ -29,8 +29,8 @@
 
 
 <div class="_chatbox">
-  <div class="card">
-      <div class="card-header p-1">
+  <div class="card" [style]="{'border-color': (lservice?.bgColor|async)}">
+      <div class="card-header p-1" [style]="{'background-color':(lservice?.bgColor|async)}">
           <div class="bar">
             <span>{{'Chat Box'}}</span>
           </div>
