@@ -73,36 +73,6 @@ export class LayoutComponent implements OnInit  {
   }
 
   preparedRoute(outlet: RouterOutlet) {
-
-    switch (outlet.activatedRouteData.animation) {
-      case 'widgets':
-        this.bread = {path: 'Widgets', icon: 'fa-cube'};
-        break;
-      case 'layouts':
-        this.bread = {path: 'Layouts', icon: 'fa-clone'};
-        break;
-      case 'charts':
-          this.bread = {path: 'Charts', icon: 'fa-chart-pie'};
-          break;
-      case 'forms':
-            this.bread = {path: 'Forms', icon: 'fa-edit'};
-          break;
-      case 'composants':
-            this.bread = {path: 'Elements', icon: 'fa-tree'};
-          break;
-      case 'tables':
-            this.bread = {path: 'Tables', icon: 'fa-table'};
-          break;
-      case 'scheduler':
-            this.bread = {path: 'Scheduler', icon: 'fa-calendar'};
-          break;
-      case 'booker':
-            this.bread = {path: 'Library', icon: 'fa-book'};
-          break;
-      default:
-        break;
-    }
-
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 
