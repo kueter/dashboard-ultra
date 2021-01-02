@@ -50,7 +50,7 @@ export class LayoutService {
 
       // layDb.uistates.toArray().then(_=> console.log(_));
       // layDb.nbarcolors.toArray().then(_=> console.log(_));
-      layDb.colors.toArray().then(_=> console.log(_));
+
 
   }
 

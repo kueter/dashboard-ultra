@@ -2,6 +2,7 @@ import { query, style, animate, group, trigger, transition  } from '@angular/ani
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, take } from 'rxjs/operators';
+import { layDb } from './layout.database';
 import { LayoutService } from './layout.service';
 
 const left = [
@@ -64,6 +65,7 @@ export class LayoutComponent implements OnInit  {
   bread: any;
   icon ='fa-minus-circle';
   state = false;
+  colors: any;
 
 
   constructor(public lservice: LayoutService,private router: Router) {
@@ -73,7 +75,7 @@ export class LayoutComponent implements OnInit  {
       this.setBreadcrumb(_?.url)
     });
 
-
+    layDb.colors.toArray().then(_=> this.colors =_);
   }
 
 
