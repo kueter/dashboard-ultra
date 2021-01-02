@@ -1,7 +1,7 @@
 import { query, style, animate, group, trigger, transition  } from '@angular/animations';
-import { AfterContentChecked, ChangeDetectorRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { LayoutService } from './layout.service';
 
 const left = [
   query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
@@ -58,14 +58,14 @@ declare var $: any;
     ])
   ]
 })
-export class LayoutComponent implements OnInit, AfterContentChecked  {
+export class LayoutComponent implements OnInit  {
   sideState: boolean = false;
   bread: any;
   icon ='fa-minus-circle';
   state = false;
 
 
-  constructor(private cdRef: ChangeDetectorRef) { }
+  constructor(public lservice: LayoutService) { }
 
 
   ngOnInit(): void {
@@ -109,7 +109,6 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
       this.sideState = event;
   }
 
-
   ccBox() {
     $("._chatbox").fadeOut()
     .css({ bottom: '1%',right:'1%', position: 'fixed' })
@@ -138,7 +137,4 @@ export class LayoutComponent implements OnInit, AfterContentChecked  {
 
   }
 
-  ngAfterContentChecked(): void {
-    this.cdRef.detectChanges();
-  }
 }

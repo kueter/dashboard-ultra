@@ -39,7 +39,7 @@ export class LayoutService {
 
       // others data & reteived data
 
-      layDb.events
+
   }
 
 }
