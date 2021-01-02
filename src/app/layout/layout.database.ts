@@ -18,7 +18,7 @@ interface NbarColor {
   color: string
 }
 
-interface events {
+interface Events {
   id?: number,
   name: string,
   date: string,
@@ -26,12 +26,24 @@ interface events {
   description: string
 }
 
-interface personnes {
+interface Personnes {
   id?: number,
   name: string,
   datenaiss: string,
+  email: string,
   job: string,
   grade: string
+}
+
+interface Charts {
+  id?: number,
+  label: string,
+  value: number
+}
+
+interface Colors {
+  id?: number,
+  value: string
 }
 
 
@@ -39,9 +51,12 @@ class LayoutDatabase extends Dexie {
 
   // Declare tables
   public uistates: Dexie.Table<UiState,number>;
-  public sbarcolor: Dexie.Table<SbarColor,number>;
-  public nbarcolor: Dexie.Table<NbarColor,number>;
-  public
+  public sbarcolors: Dexie.Table<SbarColor,number>;
+  public nbarcolors: Dexie.Table<NbarColor,number>;
+  public events: Dexie.Table<Events,number>;
+  public personnes: Dexie.Table<Personnes,number>;
+  public charts: Dexie.Table<Charts,number>;
+  public colors: Dexie.Table<Colors,number>;
 
 
   constructor() {
@@ -49,6 +64,12 @@ class LayoutDatabase extends Dexie {
 
     this.version(1).stores({
       uistates: "id,state",
+      sbarcolors: "id,color",
+      nbarcolors: "id,color",
+      events: "++id,name,date,color,description",
+      personnes: "++id,name,datenaiss,email,job,grade",
+      colors: "++id,value",
+      charts: "++id,label,value"
     });
     // this.uistates.add({id: 1, state: false });
   }
