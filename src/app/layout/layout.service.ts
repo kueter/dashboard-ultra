@@ -54,6 +54,7 @@ export class LayoutService {
 
 
   ocBox() {
+    this.cBoxc();
     $("._chatbox").fadeIn()
       .css({ bottom: '1%',right:'1%', position: 'fixed' })
       .animate({ height: '350px' }, 800, () => {
@@ -62,6 +63,7 @@ export class LayoutService {
   }
 
   osbox() {
+    this.ccBox();
     $("._settingbox").fadeIn()
       .css({ top: '20%',right:'1%', position: 'fixed' })
       .animate({ width: '300px' }, 800);
