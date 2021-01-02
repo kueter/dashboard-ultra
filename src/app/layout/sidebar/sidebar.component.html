@@ -13,7 +13,7 @@
 
   <div class="_body">
      <div class="menus">
-          <ul [ngClass]="{'wrap-menu': (lservice?.getState()|async) === true}">
+          <ul [ngClass]="{'wrap-menu': (lservice?.getState() | async) === true}">
             <li>
               <a class="side_nav" routerLink="/dashboard/widgets" routerLinkActive="active"><i class="fal fa-cube"></i> <span [ngStyle]="(lservice?.getState()|async) === true ?{'display':'none'}:{}" >{{'Widgets'}}</span></a>
             </li>
