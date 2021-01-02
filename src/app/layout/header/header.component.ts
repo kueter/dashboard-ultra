@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
   osbox() {
     $("._settingbox").fadeIn()
       .css({ top: '20%',right:'1%', position: 'fixed' })
-      .animate({ width: '400px' }, 800);
+      .animate({ width: '300px' }, 800);
   }
 
 
