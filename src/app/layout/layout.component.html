@@ -57,8 +57,8 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-3" >
-                        <div class="i-holder" [style]="{'background-color':''}">
+                <div class="col-md-3" *ngFor="let item of colors">
+                        <div class="i-holder my-2" [style]="{'background-color': item?.value}">
 
                         </div>
                 </div>

@@ -75,7 +75,7 @@ export class LayoutComponent implements OnInit  {
       this.setBreadcrumb(_?.url)
     });
 
-    layDb.colors.toArray().then(_=> this.colors =_);
+    layDb.colors.toArray().then(_=> this.colors = _);
   }
 
 
