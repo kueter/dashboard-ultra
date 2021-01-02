@@ -1,5 +1,5 @@
 <div class="side-bar"
-  [ngStyle]="side === true ? {'width':'80px', 'transition':'all .2s ease-in-out'}:{'width':'280px','transition':'all .2s ease-in-out'}">
+  [ngStyle]="(lservice?.getState()|async) === true ? {'width':'80px', 'transition':'all .2s ease-in-out'}:{'width':'280px','transition':'all .2s ease-in-out'}">
 
   <div class="_header">
       <a class="logo">
@@ -13,30 +13,30 @@
 
   <div class="_body">
      <div class="menus">
-          <ul [ngClass]="{'wrap-menu': side === true}">
+          <ul [ngClass]="{'wrap-menu': (lservice?.getState()|async) === true}">
             <li>
-              <a class="side_nav" routerLink="/dashboard/widgets" routerLinkActive="active"><i class="fal fa-cube"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Widgets'}}</span></a>
+              <a class="side_nav" routerLink="/dashboard/widgets" routerLinkActive="active"><i class="fal fa-cube"></i> <span [ngStyle]="(lservice?.getState()|async) === true ?{'display':'none'}:{}" >{{'Widgets'}}</span></a>
             </li>
             <li>
-              <a class="side_nav" routerLink="/dashboard/layouts" routerLinkActive="active"><i class="fal fa-clone"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Layouts'}}</span></a>
+              <a class="side_nav" routerLink="/dashboard/layouts" routerLinkActive="active"><i class="fal fa-clone"></i> <span [ngStyle]="(lservice?.getState()|async) === true ?{'display':'none'}:{}" >{{'Layouts'}}</span></a>
             </li>
             <li>
-              <a class="side_nav" routerLink="/dashboard/charts" routerLinkActive="active"><i class="fal fa-chart-pie"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Charts'}}</span></a>
+              <a class="side_nav" routerLink="/dashboard/charts" routerLinkActive="active"><i class="fal fa-chart-pie"></i> <span [ngStyle]="(lservice?.getState()|async) === true ?{'display':'none'}:{}" >{{'Charts'}}</span></a>
             </li>
             <li>
-              <a class="side_nav" routerLink="/dashboard/forms" routerLinkActive="active"><i class="fal fa-edit"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Forms'}}</span></a>
+              <a class="side_nav" routerLink="/dashboard/forms" routerLinkActive="active"><i class="fal fa-edit"></i> <span [ngStyle]="(lservice?.getState()|async) === true ?{'display':'none'}:{}" >{{'Forms'}}</span></a>
             </li>
             <li>
-              <a class="side_nav" routerLink="/dashboard/composants" routerLinkActive="active"><i class="fal fa-tree"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'UI Elements'}}</span></a>
+              <a class="side_nav" routerLink="/dashboard/composants" routerLinkActive="active"><i class="fal fa-tree"></i> <span [ngStyle]="(lservice?.getState()|async) === true ?{'display':'none'}:{}" >{{'UI Elements'}}</span></a>
             </li>
             <li>
-              <a class="side_nav" routerLink="/dashboard/tables" routerLinkActive="active" ><i class="fal fa-table"></i> <span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Tables'}}</span></a>
+              <a class="side_nav" routerLink="/dashboard/tables" routerLinkActive="active" ><i class="fal fa-table"></i> <span [ngStyle]="(lservice?.getState()|async) === true ?{'display':'none'}:{}" >{{'Tables'}}</span></a>
             </li>
             <li>
-              <a class="side_nav" routerLink="/dashboard/scheduler" routerLinkActive="active"><i class="fal fa-calendar"></i><span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Calendar'}}</span></a>
+              <a class="side_nav" routerLink="/dashboard/scheduler" routerLinkActive="active"><i class="fal fa-calendar"></i><span [ngStyle]="(lservice?.getState()|async) === true ?{'display':'none'}:{}" >{{'Calendar'}}</span></a>
             </li>
             <li>
-              <a class="side_nav" routerLink="/dashboard/booker" routerLinkActive="active"><i class="fal fa-book"></i><span [ngStyle]="side === true ?{'display':'none'}:{}" >{{'Library'}}</span></a>
+              <a class="side_nav" routerLink="/dashboard/booker" routerLinkActive="active"><i class="fal fa-book"></i><span [ngStyle]="(lservice?.getState()|async) === true ?{'display':'none'}:{}" >{{'Library'}}</span></a>
             </li>
           </ul>
      </div>
