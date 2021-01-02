@@ -12,6 +12,7 @@ export class LayoutService {
   state: boolean;
 
   layoutState = new Subject<boolean>();
+  breadcrumb = new Subject<{path:string, icon: string}>();
 
   constructor(private router: Router) {
     // get init state
@@ -24,7 +25,9 @@ export class LayoutService {
     // get current state
     this.router.events.pipe(
       filter((e) => e instanceof NavigationEnd)
-    ).subscribe(x => console.log(x))
+    ).subscribe((_)=> {
+      console.log(_);
+    });
 
   }
 
@@ -38,6 +41,43 @@ export class LayoutService {
   getState() {
     return this.layoutState.asObservable();
   }
+
+  setBreadcrumb(bread: any) {
+    switch (bread) {
+      case 'widgets':
+        this.breadcrumb.next({path: 'Widgets', icon: 'fa-cube'});
+        break;
+      case 'layouts':
+        this.breadcrumb.next({path: 'Layouts', icon: 'fa-clone'});
+        break;
+      case 'charts':
+          this.breadcrumb.next({path: 'Charts', icon: 'fa-chart-pie'});
+          break;
+      case 'forms':
+            this.breadcrumb.next({path: 'Forms', icon: 'fa-edit'});
+          break;
+      case 'composants':
+            this.breadcrumb.next({path: 'Elements', icon: 'fa-tree'});
+          break;
+      case 'tables':
+            this.breadcrumb.next({path: 'Tables', icon: 'fa-table'});
+          break;
+      case 'scheduler':
+            this.breadcrumb.next({path: 'Scheduler', icon: 'fa-calendar'});
+          break;
+      case 'booker':
+            this.breadcrumb.next({path: 'Library', icon: 'fa-book'});
+          break;
+      default:
+        break;
+    }
+  }
+
+  getBreadcrumb() {
+    return this.breadcrumb.asObservable();
+  }
+
+
 
 
   initDb() {
