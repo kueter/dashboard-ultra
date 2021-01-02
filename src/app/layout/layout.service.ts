@@ -17,7 +17,7 @@ export class LayoutService {
       this.state = _[0].state;
       this.layoutState = new BehaviorSubject<boolean>(this.state);
     });
-    // layDb.apps.toArray().then(_=> console.log(_));
+
   }
 
   setState() {
@@ -27,6 +27,7 @@ export class LayoutService {
   }
 
   getState() {
+    layDb.uistates.toArray().then(_=> console.log(_));
     return this.layoutState.asObservable();
   }
 
