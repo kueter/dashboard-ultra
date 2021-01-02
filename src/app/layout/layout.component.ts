@@ -110,10 +110,19 @@ export class LayoutComponent implements OnInit  {
     }
   }
 
+
+  // routes prepare and map with animation trigger
   preparedRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 
+
+  // color settings box
+  
+
+
+
+  // chats box
   ccBox() {
     $("._chatbox").fadeOut()
     .css({ bottom: '1%',right:'1%', position: 'fixed' })
@@ -141,5 +150,6 @@ export class LayoutComponent implements OnInit  {
     }
 
   }
+
 
 }
