@@ -23,10 +23,12 @@ export class LayoutService {
     layDb.uistates.toArray().then((_)=> {
       this.state = _[0].state;
       this.layoutState = new BehaviorSubject<boolean>(_[0].state);
+      console.log(_);
     });
 
     // get init background color
     layDb.sbarcolors.toArray().then((_) => {
+      console.log(_);
       this.bgColor = new BehaviorSubject<string>(_[0].color);
     });
 
