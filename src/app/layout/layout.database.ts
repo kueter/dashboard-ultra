@@ -6,22 +6,6 @@ interface UiState {
   state: boolean
 }
 
-interface App{
-  id?: number,
-  name: string
-}
-
-interface Menu{
-  id?: number,
-  name: string,
-  appId: number
-}
-
-interface Lien{
-  id?: number,
-  name: string,
-  lienId: number
-}
 
 interface SbarColor {
 
