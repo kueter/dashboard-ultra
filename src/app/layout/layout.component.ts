@@ -118,10 +118,4 @@ export class LayoutComponent implements OnInit  {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 
-
-  setSidecolor(item: string) {
-    layDb.sbarcolors.update(1, {color: item});
-  }
-
-
 }

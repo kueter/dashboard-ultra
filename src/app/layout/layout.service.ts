@@ -38,7 +38,7 @@ export class LayoutService {
     layDb.uistates.update(1, {state: this.state});
   }
 
-  setBgColor(item: string) {
+  setColor(item: string) {
       this.bgColor.next(item);
       layDb.sbarcolors.update(1, {color: item});
   }
@@ -48,7 +48,7 @@ export class LayoutService {
     return this.layoutState.asObservable();
   }
 
-  getBgColor() {
+  getColor() {
     return this.bgColor.asObservable();
   }
 
