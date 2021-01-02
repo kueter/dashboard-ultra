@@ -121,6 +121,7 @@ export class LayoutComponent implements OnInit  {
 
   setSidecolor(item: string) {
     layDb.sbarcolors.update(1, {color: item});
+    layDb.nbarcolors.toArray().then(_=> console.log(_));
   }
 
 
