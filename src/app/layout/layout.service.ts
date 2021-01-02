@@ -26,9 +26,8 @@ export class LayoutService {
     this.router.events.pipe(
       filter((e) => e instanceof NavigationEnd)
     ).subscribe((_: any)=> {
-      console.log(_?.url);
       this.breadcrumb.next();
-      this.setBreadcrumb(_);
+      this.setBreadcrumb(_?.url);
     });
 
   }
@@ -44,15 +43,15 @@ export class LayoutService {
     return this.layoutState.asObservable();
   }
 
-  setBreadcrumb(bread: any) {
-    switch (bread?.url) {
+  setBreadcrumb(bread: string) {
+    switch (bread) {
       case '/dashboard/widgets':
         this.breadcrumb.next({path: 'Widgets', icon: 'fa-cube'});
         break;
       case '/dashboard/layouts':
         this.breadcrumb.next({path: 'Layouts', icon: 'fa-clone'});
         break;
-      case 'dashboard/charts':
+      case '/dashboard/charts':
           this.breadcrumb.next({path: 'Charts', icon: 'fa-chart-pie'});
           break;
       case '/dashboard/forms':
