@@ -144,6 +144,7 @@
         height: 40px;
         width: 40px;
         border-radius: 50%;
+        cursor: pointer;
       }
 
       .cle {
@@ -152,7 +153,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
+
         i {
           color: #575c5a;
         }
