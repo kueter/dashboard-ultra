@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { filter } from 'rxjs/operators';
 import { layDb } from './layout.database';
 
 declare var $: any;
@@ -14,20 +12,24 @@ export class LayoutService {
   state: boolean;
 
   layoutState = new Subject<boolean>();
+  bgColor = new Subject<string>();
 
   icon ='fa-minus-circle';
 
   chatstate = false;
 
-  constructor(private router: Router) {
+  constructor() {
     // get init state
     layDb.uistates.toArray().then((_)=> {
-      console.log('Init:' + _[0].state);
       this.state = _[0].state;
       this.layoutState = new BehaviorSubject<boolean>(_[0].state);
     });
 
-    // get current state
+    // get init background color
+    layDb.sbarcolors.toArray().then((_) => {
+      this.bgColor = new BehaviorSubject<string>(_[0].color);
+    });
+
   }
 
   setState() {
@@ -36,8 +38,18 @@ export class LayoutService {
     layDb.uistates.update(1, {state: this.state});
   }
 
+  setBgColor(item: string) {
+      this.bgColor.next(item);
+      layDb.sbarcolors.update(1, {color: item});
+  }
+
+
   getState() {
     return this.layoutState.asObservable();
+  }
+
+  getBgColor() {
+    return this.bgColor.asObservable();
   }
 
 

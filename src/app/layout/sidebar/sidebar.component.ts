@@ -11,13 +11,8 @@ import { LayoutService } from '../layout.service';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  bgcolor: any;
 
   constructor(public lservice: LayoutService) {
-    layDb.sbarcolors.toArray().then(_=> {
-      console.log(_[0]);
-      this.bgcolor = _[0]?.color
-    });
   }
 
   ngOnInit(): void {
@@ -26,8 +21,4 @@ export class SidebarComponent implements OnInit {
     // console.log(this.extraParameter);
 
   }
-
-
-
-
 }
