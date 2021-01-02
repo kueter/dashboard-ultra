@@ -1,6 +1,6 @@
 <div class="side-bar"
   [ngStyle]=" (lservice?.getState() |async ) === true ? {'width':'80px', 'transition':'all .2s ease-in-out'}:{'width':'280px','transition':'all .2s ease-in-out'}"
-  [style]="{'background-color': bgcolor}"
+  [style]="{'background-color': (lservice?.getBgColor()|async) }"
   >
 
   <div class="_header">
