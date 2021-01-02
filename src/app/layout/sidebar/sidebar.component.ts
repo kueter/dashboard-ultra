@@ -15,8 +15,8 @@ export class SidebarComponent implements OnInit {
 
   constructor(public lservice: LayoutService) {
     layDb.sbarcolors.toArray().then(_=> {
-      console.log(_);
-      this.bgcolor = _[0].color
+      console.log(_[0]);
+      this.bgcolor = _[0]?.color
     });
   }
 
