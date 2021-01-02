@@ -21,6 +21,8 @@ class LayoutDatabase extends Dexie {
 
   // Declare tables
   public uistates: Dexie.Table<UiState,number>;
+  public sbarcolor: Dexie.Table<SbarColor,number>;
+  public nbarcolor: Dexie.Table<NbarColor,number>;
 
 
   constructor() {
