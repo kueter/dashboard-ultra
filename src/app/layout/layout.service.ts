@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { filter } from 'rxjs/operators';
 import { layDb } from './layout.database';
 
 @Injectable({
@@ -11,12 +13,18 @@ export class LayoutService {
 
   layoutState = new Subject<boolean>();
 
-  constructor() {
+  constructor(private router: Router) {
+    // get init state
     layDb.uistates.toArray().then((_)=> {
       console.log('Init:' + _[0].state);
       this.state = _[0].state;
       this.layoutState = new BehaviorSubject<boolean>(_[0].state);
     });
+
+    // get current state
+    this.router.events.pipe(
+      filter((e) => e instanceof NavigationEnd)
+    ).subscribe(x => console.log(x))
 
   }
 
