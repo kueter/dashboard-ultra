@@ -7,7 +7,7 @@ import { layDb } from './layout.database';
 })
 export class LayoutService {
 
-  state:boolean;
+  state: boolean;
 
   layoutState = new BehaviorSubject<boolean>(true);
 
