@@ -72,6 +72,8 @@ export class LayoutComponent implements OnInit  {
     ).subscribe((_: any) => {
       this.setBreadcrumb(_?.url)
     });
+
+
   }
 
 
