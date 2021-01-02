@@ -44,6 +44,7 @@ export class LayoutService {
       layDb.colors.add({value: '#DEB252'});
       layDb.colors.add({value: '#ED0707'});
       layDb.colors.add({value: '#363535'});
+      layDb.colors.add({value: '#FFFFFF'});
 
       // others data & reteived data
 
