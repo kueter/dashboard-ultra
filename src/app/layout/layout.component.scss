@@ -130,12 +130,11 @@
 ._settingbox {
   z-index: 20;
   position: fixed;
-  width: 250px;
+  width: 0px;
   height: 300px;
   display: none;
   background-color: #46957b;
-  top: 15%;
-  right: 1%;
+  overflow: hidden;
   .card {
     height: 100%;
     border: none;

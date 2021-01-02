@@ -118,7 +118,8 @@ export class LayoutComponent implements OnInit  {
 
 
   // color settings box
-  
+
+
 
 
 
