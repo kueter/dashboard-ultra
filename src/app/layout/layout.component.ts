@@ -121,46 +121,4 @@ export class LayoutComponent implements OnInit  {
   }
 
 
-  // color settings box
-
-  cBoxc() {
-    $("._settingbox").fadeIn()
-      .css({ top: '20%',right:'1%', position: 'fixed' })
-      .animate({ width: '0px', right: '-10%' }, 800);
-  }
-
-
-
-  // chats box
-  ccBox() {
-    $("._chatbox").fadeOut()
-    .css({ bottom: '1%',right:'1%', position: 'fixed' })
-    .animate({ height: '0px' }, 800);
-  }
-
-  reduceBox() {
-
-    this.state =!this.state;
-
-    if(this.state == true) {
-      $("._chatbox")
-      .css({ bottom: '1%',right:'1%', position: 'fixed' })
-      .animate({ height: '35px' }, 800, () =>{
-          this.icon = 'fa-square'
-      });
-    }
-
-    if(this.state == false) {
-      $("._chatbox")
-      .css({ bottom: '1%',right:'1%', position: 'fixed' })
-      .animate({ height: '350px' }, 800, () => {
-          this.icon = 'fa-minus-circle'
-      });
-    }
-
-  }
-
-
-
-
 }

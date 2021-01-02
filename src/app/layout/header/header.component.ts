@@ -21,17 +21,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ocBox() {
-    $("._chatbox").fadeIn()
-      .css({ bottom: '1%',right:'1%', position: 'fixed' })
-      .animate({ height: '350px' }, 800);
-  }
-
-  osbox() {
-    $("._settingbox").fadeIn()
-      .css({ top: '20%',right:'1%', position: 'fixed' })
-      .animate({ width: '300px' }, 800);
-  }
 
 
 }

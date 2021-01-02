@@ -4,6 +4,8 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { layDb } from './layout.database';
 
+declare var $: any;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +14,9 @@ export class LayoutService {
   state: boolean;
 
   layoutState = new Subject<boolean>();
+
+  icon ='fa-minus-circle';
+  chatstate = false;
 
   constructor(private router: Router) {
     // get init state
@@ -51,6 +56,58 @@ export class LayoutService {
       // layDb.uistates.toArray().then(_=> console.log(_));
       // layDb.nbarcolors.toArray().then(_=> console.log(_));
 
+  }
+
+
+  ocBox() {
+    $("._chatbox").fadeIn()
+      .css({ bottom: '1%',right:'1%', position: 'fixed' })
+      .animate({ height: '350px' }, 800);
+  }
+
+  osbox() {
+    $("._settingbox").fadeIn()
+      .css({ top: '20%',right:'1%', position: 'fixed' })
+      .animate({ width: '300px' }, 800);
+  }
+
+
+  // color settings box
+
+  cBoxc() {
+    $("._settingbox").fadeIn()
+      .css({ top: '20%',right:'1%', position: 'fixed' })
+      .animate({ width: '0px', right: '-10%' }, 800);
+  }
+
+
+
+  // chats box
+  ccBox() {
+    $("._chatbox").fadeOut()
+    .css({ bottom: '1%',right:'1%', position: 'fixed' })
+    .animate({ height: '0px' }, 800);
+  }
+
+  reduceBox() {
+
+    this.chatstate =!this.chatstate;
+
+    if(this.state == true) {
+      $("._chatbox")
+      .css({ bottom: '1%',right:'1%', position: 'fixed' })
+      .animate({ height: '35px' }, 800, () =>{
+          this.icon = 'fa-square'
+      });
+    }
+
+    if(this.chatstate == false) {
+      $("._chatbox")
+      .css({ bottom: '1%',right:'1%', position: 'fixed' })
+      .animate({ height: '350px' }, 800, () => {
+          this.icon = 'fa-minus-circle'
+      });
+    }
 
   }
 
