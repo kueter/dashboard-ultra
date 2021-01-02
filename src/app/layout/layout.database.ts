@@ -8,12 +8,30 @@ interface UiState {
 
 
 interface SbarColor {
-
+  id?: number,
+  color: string
 }
 
 
 interface NbarColor {
+  id?: number,
+  color: string
+}
 
+interface events {
+  id?: number,
+  name: string,
+  date: string,
+  color: string,
+  description: string
+}
+
+interface personnes {
+  id?: number,
+  name: string,
+  datenaiss: string,
+  job: string,
+  grade: string
 }
 
 
@@ -23,6 +41,7 @@ class LayoutDatabase extends Dexie {
   public uistates: Dexie.Table<UiState,number>;
   public sbarcolor: Dexie.Table<SbarColor,number>;
   public nbarcolor: Dexie.Table<NbarColor,number>;
+  public
 
 
   constructor() {
