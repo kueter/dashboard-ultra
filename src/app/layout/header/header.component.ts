@@ -2,6 +2,7 @@ import { Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { stringify } from 'querystring';
+import { LayoutService } from '../layout.service';
 
 declare var $: any;
 
@@ -12,10 +13,8 @@ declare var $: any;
 })
 export class HeaderComponent implements OnInit {
 
-  sideState = false;
-  @Output() side = new EventEmitter();
 
-  constructor() { }
+  constructor(public lservice: LayoutService) { }
 
   ngOnInit(): void {
   }
@@ -24,12 +23,6 @@ export class HeaderComponent implements OnInit {
     $("._chatbox").fadeIn()
       .css({ bottom: '1%',right:'1%', position: 'fixed' })
       .animate({ height: '350px' }, 800);
-  }
-
-
-  toggleSideBar() {
-    this.sideState = !this.sideState;
-    this.side.emit(this.sideState);
   }
 
 
