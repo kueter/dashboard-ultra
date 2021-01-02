@@ -1,5 +1,5 @@
 <div class="side-bar"
-  [ngStyle]="(lservice?.getState()|async) === true ? {'width':'80px', 'transition':'all .2s ease-in-out'}:{'width':'280px','transition':'all .2s ease-in-out'}">
+  [ngStyle]=" (lservice?.getState() |async ) === true ? {'width':'80px', 'transition':'all .2s ease-in-out'}:{'width':'280px','transition':'all .2s ease-in-out'}">
 
   <div class="_header">
       <a class="logo">
