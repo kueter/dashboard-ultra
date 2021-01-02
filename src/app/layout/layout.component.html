@@ -3,6 +3,8 @@
 
 <div class="__main_outlet" [ngStyle]="(lservice?.getState()|async ) ? {'padding-left': '80px'}: {'':''}">
   <div class="inner__o">
+
+    <!-- breadcrumb -->
     <div class="breadcrumb-d">
       <div class="ind_box">
             <i [class]="'fal '+ bread?.icon "></i>
@@ -13,12 +15,19 @@
           <span class="curr">{{bread?.path}}</span>
       </div>
     </div>
+
+    <!-- Routes container -->
     <div [@outletAnimation]="preparedRoute(o)">
       <router-outlet #o="outlet"></router-outlet>
     </div>
 
   </div>
 </div>
+
+
+
+
+
 
 
 <div class="_chatbox">

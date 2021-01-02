@@ -11,16 +11,15 @@ import { LayoutService } from '../layout.service';
 })
 export class SidebarComponent implements OnInit {
 
-  extraParameter: any;
 
-  constructor(private activatedRoute: ActivatedRoute, public lservice: LayoutService) {}
+
+  constructor( public lservice: LayoutService) {}
 
   ngOnInit(): void {
     // this.extraParameter = this.activatedRoute.snapshot.firstChild.data.extraParameter;
 
     // console.log(this.extraParameter);
 
-    console.log(localStorage.getItem('state'));
   }
 
 

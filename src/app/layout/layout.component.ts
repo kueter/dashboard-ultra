@@ -1,5 +1,5 @@
 import { query, style, animate, group, trigger, transition  } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LayoutService } from './layout.service';
 
@@ -30,6 +30,7 @@ const right = [
 declare var $: any;
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
