@@ -37,14 +37,19 @@ export class LayoutService {
 
 
   initDb() {
-      // ui state & color
-      // layDb.uistates.add({ id: 1, state: false });
+      // insert data
+      layDb.colors.add({value: '#3171B7'});
+      layDb.colors.add({value: '#e81341'});
+      layDb.colors.add({value: '#46957B'});
+      layDb.colors.add({value: '#DEB252'});
+      layDb.colors.add({value: '#ED0707'});
+      layDb.colors.add({value: '#363535'});
 
       // others data & reteived data
 
-      layDb.uistates.toArray().then(_=> console.log(_));
-      layDb.nbarcolors.toArray().then(_=> console.log(_));
-      layDb.sbarcolors.toArray().then(_=> console.log(_));
+      // layDb.uistates.toArray().then(_=> console.log(_));
+      // layDb.nbarcolors.toArray().then(_=> console.log(_));
+      // layDb.sbarcolors.toArray().then(_=> console.log(_));
 
   }
 
