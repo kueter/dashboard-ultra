@@ -61,10 +61,9 @@
             </div>
             <div class="row">
                 <div class="col-md-3" *ngFor="let item of colors">
-                        <div class="i-holder my-2" [style]="{'background-color': item?.value}" [title]="item?.value">
+                        <div class="i-holder my-2" [style]="{'background-color': item?.value}" [title]="item?.value" (click)="setSidecolor(item)">
 
                         </div>
-
                 </div>
                 <div class="col-md-3" >
                   <div class="i-holder my-2 cle" (click)="lservice?.cBoxc()" title="Close">

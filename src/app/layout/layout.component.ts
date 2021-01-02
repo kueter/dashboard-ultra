@@ -119,4 +119,9 @@ export class LayoutComponent implements OnInit  {
   }
 
 
+  setSidecolor(item: any) {
+
+  }
+
+
 }
