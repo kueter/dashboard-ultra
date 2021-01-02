@@ -29,4 +29,10 @@ export class LayoutService {
   getState() {
     return this.layoutState.asObservable();
   }
+
+
+  initDb() {
+
+  }
+
 }
