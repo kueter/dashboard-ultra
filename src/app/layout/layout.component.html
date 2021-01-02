@@ -25,9 +25,6 @@
 </div>
 
 
-
-
-
 <div class="_chatbox">
   <div class="card" [style]="{'border-color': (lservice?.bgColor|async)}">
       <div class="card-header p-1" [style]="{'background-color':(lservice?.bgColor|async)}">
@@ -40,14 +37,14 @@
           </div>
       </div>
       <div class="card-body p-1"></div>
-      <div class="card-footer p-1">
+      <div class="card-footer p-1" [style]="{'border-color': (lservice?.bgColor|async)}">
         <div class="emoji">
-            <button class="btn"><i class="fal fa-smile"></i></button>&nbsp;
-            <button class="btn"><i class="fal fa-paperclip"></i></button>
+            <button class="btn"><i class="fal fa-smile" [style]="{'color':(lservice?.bgColor|async)}"></i></button>&nbsp;
+            <button class="btn"><i class="fal fa-paperclip" [style]="{'color':(lservice?.bgColor|async)}"></i></button>
         </div>
         <div class="form">
             <input type="text">
-            <i class="fal fa-paper-plane"></i>
+            <i class="fal fa-paper-plane" [style]="{'color':(lservice?.bgColor|async)}"></i>
         </div>
       </div>
   </div>
