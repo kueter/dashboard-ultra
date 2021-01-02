@@ -27,7 +27,7 @@ export class LayoutService {
       filter((e) => e instanceof NavigationEnd)
     ).subscribe((_: any)=> {
       console.log(_?.url);
-      // this.breadcrumb.next();
+      this.breadcrumb.next();
       this.setBreadcrumb(_);
     });
 
