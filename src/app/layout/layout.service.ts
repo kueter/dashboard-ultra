@@ -22,8 +22,6 @@ export class LayoutService {
     });
 
     // get current state
-
-
   }
 
   setState() {
