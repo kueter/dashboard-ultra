@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { layDb } from './layout.database';
 
 @Injectable({
@@ -9,13 +9,13 @@ export class LayoutService {
 
   state: boolean;
 
-  layoutState = new BehaviorSubject<boolean>(true);
+  layoutState = new Subject<boolean>();
 
   constructor() {
-
     layDb.uistates.toArray().then((_)=> {
+      console.log('Init:' + _[0].state);
       this.state = _[0].state;
-      this.layoutState = new BehaviorSubject<boolean>(this.state);
+      this.layoutState = new BehaviorSubject<boolean>(_[0].state);
     });
 
   }
