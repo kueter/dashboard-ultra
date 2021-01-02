@@ -1,6 +1,7 @@
 import { query, style, animate, group, trigger, transition  } from '@angular/animations';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { take } from 'rxjs/operators';
 import { LayoutService } from './layout.service';
 
 const left = [
@@ -70,6 +71,12 @@ export class LayoutComponent implements OnInit  {
 
   ngOnInit(): void {
     // this.lservice.initDb();
+
+    this.lservice.breadcrumb.pipe(take(1)).subscribe(
+      (_) => {
+        this.bread = _ ;
+      }
+    )
   }
 
   preparedRoute(outlet: RouterOutlet) {

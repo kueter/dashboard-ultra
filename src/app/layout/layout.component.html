@@ -7,12 +7,12 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-d">
       <div class="ind_box">
-            <i [class]="'fal '+ (lservice?.getBreadcrumb()|async)?.icon"></i>
+            <i [class]="'fal '+ bread?.icon"></i>
       </div>
       <div class="current_path">
           <span class="def">{{'Dashboard'}}</span>
           <span class="sep"><i class="fas fa-chevron-right"></i></span>
-          <span class="curr">{{(lservice?.getBreadcrumb()|async)?.path}}</span>
+          <span class="curr">{{bread?.path}}</span>
       </div>
     </div>
 
