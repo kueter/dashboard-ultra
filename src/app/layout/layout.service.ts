@@ -16,6 +16,7 @@ export class LayoutService {
   layoutState = new Subject<boolean>();
 
   icon ='fa-minus-circle';
+
   chatstate = false;
 
   constructor(private router: Router) {

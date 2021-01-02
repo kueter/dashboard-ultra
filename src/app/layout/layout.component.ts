@@ -63,8 +63,6 @@ declare var $: any;
 export class LayoutComponent implements OnInit  {
 
   bread: any;
-  icon ='fa-minus-circle';
-  state = false;
   colors: any;
 
 

@@ -35,8 +35,8 @@
             <span>{{'Chat Box'}}</span>
           </div>
           <div class="actions">
-              <button class="btn" (click)="reduceBox()"><i [class]="'fal '+ icon"></i></button>&nbsp;
-              <button class="btn" (click)="ccBox()"><i class="fal fa-times-circle"></i></button>
+              <button class="btn" (click)="lservice?.reduceBox()"><i [class]="'fal '+ lservice?.icon"></i></button>&nbsp;
+              <button class="btn" (click)="lservice?.ccBox()"><i class="fal fa-times-circle"></i></button>
           </div>
       </div>
       <div class="card-body p-1"></div>
@@ -67,7 +67,7 @@
 
                 </div>
                 <div class="col-md-3" >
-                  <div class="i-holder my-2 cle" (click)="cBoxc()" title="Close">
+                  <div class="i-holder my-2 cle" (click)="lservice?.cBoxc()" title="Close">
                       <i class="fal fa-times"></i>
                   </div>
                 </div>
