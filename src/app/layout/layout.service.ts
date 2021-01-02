@@ -38,19 +38,19 @@ export class LayoutService {
 
   initDb() {
       // insert data
-      layDb.colors.add({value: '#3171B7'});
-      layDb.colors.add({value: '#e81341'});
-      layDb.colors.add({value: '#46957B'});
-      layDb.colors.add({value: '#DEB252'});
-      layDb.colors.add({value: '#ED0707'});
-      layDb.colors.add({value: '#363535'});
-      layDb.colors.add({value: '#FFFFFF'});
+      // layDb.colors.add({value: '#3171B7'});
+      // layDb.colors.add({value: '#e81341'});
+      // layDb.colors.add({value: '#46957B'});
+      // layDb.colors.add({value: '#DEB252'});
+      // layDb.colors.add({value: '#ED0707'});
+      // layDb.colors.add({value: '#363535'});
+      // layDb.colors.add({value: '#FFFFFF'});
 
       // others data & reteived data
 
       // layDb.uistates.toArray().then(_=> console.log(_));
       // layDb.nbarcolors.toArray().then(_=> console.log(_));
-      // layDb.sbarcolors.toArray().then(_=> console.log(_));
+      layDb.colors.toArray().then(_=> console.log(_));
 
   }
 
