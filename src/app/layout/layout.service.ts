@@ -32,7 +32,11 @@ export class LayoutService {
 
 
   initDb() {
-
+      // ui state & color
+      layDb.uistates.add({ id: 1, state: false });
+      layDb.nbarcolors.add({ id: 1, color: '#FFFFFF'});
+      layDb.sbarcolors.add({ id: 1, color: '#46957F'});
+      //
   }
 
 }

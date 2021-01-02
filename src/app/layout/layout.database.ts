@@ -1,6 +1,5 @@
 import Dexie from 'dexie';
 
-
 interface UiState {
   id?: number,
   state: boolean
@@ -71,7 +70,6 @@ class LayoutDatabase extends Dexie {
       colors: "++id,value",
       charts: "++id,label,value"
     });
-    // this.uistates.add({id: 1, state: false });
   }
 
 }
