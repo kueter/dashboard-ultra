@@ -25,8 +25,10 @@ export class LayoutService {
     // get current state
     this.router.events.pipe(
       filter((e) => e instanceof NavigationEnd)
-    ).subscribe((_)=> {
-      console.log(_);
+    ).subscribe((_: any)=> {
+      console.log(_?.url);
+      // this.breadcrumb.next();
+      this.setBreadcrumb(_);
     });
 
   }
@@ -43,29 +45,29 @@ export class LayoutService {
   }
 
   setBreadcrumb(bread: any) {
-    switch (bread) {
-      case 'widgets':
+    switch (bread?.url) {
+      case '/dashboard/widgets':
         this.breadcrumb.next({path: 'Widgets', icon: 'fa-cube'});
         break;
-      case 'layouts':
+      case '/dashboard/layouts':
         this.breadcrumb.next({path: 'Layouts', icon: 'fa-clone'});
         break;
-      case 'charts':
+      case 'dashboard/charts':
           this.breadcrumb.next({path: 'Charts', icon: 'fa-chart-pie'});
           break;
-      case 'forms':
+      case '/dashboard/forms':
             this.breadcrumb.next({path: 'Forms', icon: 'fa-edit'});
           break;
-      case 'composants':
+      case '/dashboard/composants':
             this.breadcrumb.next({path: 'Elements', icon: 'fa-tree'});
           break;
-      case 'tables':
+      case '/dashboard/tables':
             this.breadcrumb.next({path: 'Tables', icon: 'fa-table'});
           break;
-      case 'scheduler':
+      case '/dashboard/scheduler':
             this.breadcrumb.next({path: 'Scheduler', icon: 'fa-calendar'});
           break;
-      case 'booker':
+      case '/dashboard/booker':
             this.breadcrumb.next({path: 'Library', icon: 'fa-book'});
           break;
       default:
