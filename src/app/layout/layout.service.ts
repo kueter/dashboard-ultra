@@ -12,9 +12,9 @@ export class LayoutService {
   state: boolean;
 
   // layoutState: BehaviorSubject<boolean>;
-  private layoutState: Subject<boolean>;
-  private bgColor: Subject<string>;
-  private colors = [];
+  layoutState = new Subject<boolean>();
+  bgColor = new  Subject<string>();
+  colors = [];
 
   icon ='fa-minus-circle';
 
@@ -51,7 +51,7 @@ export class LayoutService {
 
 
   init() {
-    this.storage.get('state').subscribe((_:boolean) => {
+    this.storage.get('state').subscribe((_:any) => {
         if(typeof _ == 'undefined') {
           this.storage.set('state', false).subscribe();
           this.layoutState.next(false);

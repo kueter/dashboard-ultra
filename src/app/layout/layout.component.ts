@@ -76,6 +76,7 @@ export class LayoutComponent implements OnInit  {
     this.router.events.pipe(
       filter((e) => e instanceof NavigationEnd)
     ).subscribe((_: any) => {
+      console.log(_);
       this.setBreadcrumb(_?.url);
     });
 
