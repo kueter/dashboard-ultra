@@ -7,12 +7,12 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-d">
       <div class="ind_box">
-            <i [class]="'fal '+ bread?.icon" [style]="{'color':(lservice?.getbColor()|async)}"></i>
+            <i [class]="'fal '+ (lservice?.bread|async)?.icon" [style]="{'color':(lservice?.getbColor()|async)}"></i>
       </div>
       <div class="current_path">
           <span class="def" [style]="{'color':(lservice?.getbColor()|async)}">{{'Dashboard'}}</span>
           <span class="sep"><i class="fal fa-chevron-right" [style]="{'color':(lservice?.getbColor()|async)}"></i></span>
-          <span class="curr" [style]="{'color':(lservice?.getbColor()|async)}">{{bread?.path}}</span>
+          <span class="curr" [style]="{'color':(lservice?.getbColor()|async)}">{{(lservice?.bread|async)?.path}}</span>
       </div>
     </div>
 
