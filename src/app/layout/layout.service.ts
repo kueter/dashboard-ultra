@@ -37,6 +37,7 @@ export class LayoutService {
 
   setColor(item: string) {
       this.bgColor.next(item);
+      this.storage.set('bgcolor',item).subscribe(_=> console.log(_));
   }
 
 
