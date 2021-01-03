@@ -77,7 +77,7 @@ export class LayoutComponent implements OnInit  {
 
 
   ngOnInit(): void {
-    // this.lservice.initDb();
+    this.lservice.initDb();
   }
 
   setBreadcrumb(bread: string) {
