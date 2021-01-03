@@ -48,7 +48,7 @@ export class LayoutService {
   }
 
 
-  initDb() {
+  init() {
     this.storage.get('state').subscribe(_ => console.log(_));
   }
 
