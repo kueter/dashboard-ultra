@@ -12,9 +12,9 @@ export class LayoutService {
   state: boolean;
 
   // layoutState: BehaviorSubject<boolean>;
-  layoutState: Subject<boolean>;
-  bgColor: Subject<string>;
-  colors = [];
+  private layoutState: Subject<boolean>;
+  private bgColor: Subject<string>;
+  private colors = [];
 
   icon ='fa-minus-circle';
 
@@ -47,6 +47,10 @@ export class LayoutService {
 
   getColor() {
     return this.bgColor.asObservable();
+  }
+
+  get Colors () {
+    return this.colors;
   }
 
 
