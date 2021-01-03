@@ -69,7 +69,7 @@ export class LayoutComponent implements OnInit  {
     this.router.events.pipe(
       filter((e) => e instanceof NavigationEnd)
     ).subscribe((_: any) => {
-      this.setBreadcrumb(_?.url)
+      this.setBreadcrumb(_?.url);
     });
 
     // layDb.colors.toArray().then(_=> this.colors = _);
