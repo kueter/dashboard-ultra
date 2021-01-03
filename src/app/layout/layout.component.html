@@ -7,12 +7,12 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-d">
       <div class="ind_box">
-            <i [class]="'fal '+ bread?.icon" [style]="{'color':(lservice?.bgColor|async)}"></i>
+            <i [class]="'fal '+ bread?.icon" [style]="{'color':(lservice?.getColor()|async)}"></i>
       </div>
       <div class="current_path">
-          <span class="def" [style]="{'color':(lservice?.bgColor|async)}">{{'Dashboard'}}</span>
-          <span class="sep"><i class="fal fa-chevron-right" [style]="{'color':(lservice?.bgColor|async)}"></i></span>
-          <span class="curr" [style]="{'color':(lservice?.bgColor|async)}">{{bread?.path}}</span>
+          <span class="def" [style]="{'color':(lservice?.getColor()|async)}">{{'Dashboard'}}</span>
+          <span class="sep"><i class="fal fa-chevron-right" [style]="{'color':(lservice?.getColor()|async)}"></i></span>
+          <span class="curr" [style]="{'color':(lservice?.getColor()|async)}">{{bread?.path}}</span>
       </div>
     </div>
 
@@ -26,8 +26,8 @@
 
 
 <div class="_chatbox">
-  <div class="card" [style]="{'border-color': (lservice?.bgColor|async)}">
-      <div class="card-header p-1" [style]="{'background-color':(lservice?.bgColor|async)}">
+  <div class="card" [style]="{'border-color': (lservice?.getColor()|async)}">
+      <div class="card-header p-1" [style]="{'background-color':(lservice?.getColor()|async)}">
           <div class="bar">
             <span>{{'Chat Box'}}</span>
           </div>
@@ -37,14 +37,14 @@
           </div>
       </div>
       <div class="card-body p-1"></div>
-      <div class="card-footer p-1" [style]="{'border-color': (lservice?.bgColor|async)}">
+      <div class="card-footer p-1" [style]="{'border-color': (lservice?.getColor()|async)}">
         <div class="emoji">
-            <button class="btn"><i class="fal fa-smile" [style]="{'color':(lservice?.bgColor|async)}"></i></button>&nbsp;
-            <button class="btn"><i class="fal fa-paperclip" [style]="{'color':(lservice?.bgColor|async)}"></i></button>
+            <button class="btn"><i class="fal fa-smile" [style]="{'color':(lservice?.getColor()|async)}"></i></button>&nbsp;
+            <button class="btn"><i class="fal fa-paperclip" [style]="{'color':(lservice?.getColor()|async)}"></i></button>
         </div>
         <div class="form">
             <input type="text">
-            <i class="fal fa-paper-plane" [style]="{'color':(lservice?.bgColor|async)}"></i>
+            <i class="fal fa-paper-plane" [style]="{'color':(lservice?.getColor()|async)}"></i>
         </div>
       </div>
   </div>
