@@ -11,7 +11,8 @@ export class LayoutService {
 
   state: boolean;
 
-  layoutState: BehaviorSubject<boolean>;
+  // layoutState: BehaviorSubject<boolean>;
+  layoutState = new  BehaviorSubject<boolean>(true);
   bgColor: BehaviorSubject<string>;
 
   icon ='fa-minus-circle';
@@ -30,6 +31,7 @@ export class LayoutService {
     this.state = !this.state;
     this.layoutState.next(this.state);
     this.storage.set('state',this.state).subscribe(_=> console.log(_));
+    this.storage.get('state').subscribe(_ => console.log(_));
   }
 
   setColor(item: string) {
