@@ -31,7 +31,6 @@ export class LayoutService {
     this.state = !this.state;
     this.layoutState.next(this.state);
     this.storage.set('state',this.state).subscribe(_=> console.log(_));
-
   }
 
   setColor(item: string) {
@@ -49,7 +48,13 @@ export class LayoutService {
 
 
   init() {
-    this.storage.get('state').subscribe(_ => console.log(_));
+
+    this.storage.get('state').subscribe((_) => {
+        console.log(_);
+    }
+    );
+    // this.storage.get('bgcolor').subscribe(_ => console.log(_));
+    // this.storage.get('colors').subscribe(_ => console.log(_));
   }
 
 
