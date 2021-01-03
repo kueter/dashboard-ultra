@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { StorageMap } from '@ngx-pwa/local-storage';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 declare var $: any;
 
@@ -12,22 +14,29 @@ export class LayoutService {
   state: boolean;
 
   layoutState = new BehaviorSubject<boolean>(true);
-  bgColor = new  Subject<string>();
+  bgColor = new  BehaviorSubject<string>('#46957B');
   colors = [];
+
+  bread = new BehaviorSubject<any>({path: 'Widgets', icon: 'fa-cube'});
 
   icon ='fa-minus-circle';
 
   chatstate = false;
 
 
-  constructor(private storage: StorageMap) {
-    this.init();
+  constructor(private storage: StorageMap, private router: Router) {
+    this.router.events.pipe(
+      filter((e) => e instanceof NavigationEnd)
+    ).subscribe((_: any) => {
+      console.log(_);
+      this.setBreadcrumb(_?.url);
+    });
   }
 
   setState() {
     this.state = !this.state;
     this.layoutState.next(this.state);
-    this.storage.set('state',this.state).subscribe(_=> console.log(_));
+    // this.storage.set('state',this.state).subscribe(_=> console.log(_));
   }
 
   setColor(item: string) {
@@ -138,6 +147,40 @@ export class LayoutService {
       });
     }
 
+  }
+
+
+  //
+
+  setBreadcrumb(bread: string) {
+    switch (bread) {
+      case '/dashboard/widgets':
+        this.bread.next( {path: 'Widgets', icon: 'fa-cube'});
+        break;
+      case '/dashboard/layouts':
+        this.bread.next({path: 'Layouts', icon: 'fa-clone'});
+        break;
+      case '/dashboard/charts':
+          this.bread.next( {path: 'Charts', icon: 'fa-chart-pie'});
+          break;
+      case '/dashboard/forms':
+            this.bread.next({path: 'Forms', icon: 'fa-edit'});
+          break;
+      case '/dashboard/composants':
+            this.bread.next({path: 'Elements', icon: 'fa-tree'});
+          break;
+      case '/dashboard/tables':
+            this.bread.next({path: 'Tables', icon: 'fa-table'});
+          break;
+      case '/dashboard/scheduler':
+            this.bread.next({path: 'Scheduler', icon: 'fa-calendar'});
+          break;
+      case '/dashboard/booker':
+            this.bread.next({path: 'Library', icon: 'fa-book'});
+          break;
+      default:
+        break;
+    }
   }
 
 }

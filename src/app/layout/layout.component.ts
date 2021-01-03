@@ -73,46 +73,12 @@ export class LayoutComponent implements OnInit  {
   ngOnInit(): void {
     this.lservice.init();
 
-    this.router.events.pipe(
-      filter((e) => e instanceof NavigationEnd)
-    ).subscribe((_: any) => {
-      console.log(_);
-      this.setBreadcrumb(_?.url);
-    });
+
 
     this.colors = this.lservice.Colors;
   }
 
-  setBreadcrumb(bread: string) {
-    switch (bread) {
-      case '/dashboard/widgets':
-        this.bread = {path: 'Widgets', icon: 'fa-cube'};
-        break;
-      case '/dashboard/layouts':
-        this.bread={path: 'Layouts', icon: 'fa-clone'};
-        break;
-      case '/dashboard/charts':
-          this.bread = {path: 'Charts', icon: 'fa-chart-pie'};
-          break;
-      case '/dashboard/forms':
-            this.bread={path: 'Forms', icon: 'fa-edit'};
-          break;
-      case '/dashboard/composants':
-            this.bread={path: 'Elements', icon: 'fa-tree'};
-          break;
-      case '/dashboard/tables':
-            this.bread={path: 'Tables', icon: 'fa-table'};
-          break;
-      case '/dashboard/scheduler':
-            this.bread={path: 'Scheduler', icon: 'fa-calendar'};
-          break;
-      case '/dashboard/booker':
-            this.bread={path: 'Library', icon: 'fa-book'};
-          break;
-      default:
-        break;
-    }
-  }
+
 
 
   // routes prepare and map with animation trigger
