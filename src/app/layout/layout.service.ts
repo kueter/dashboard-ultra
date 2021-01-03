@@ -55,6 +55,7 @@ export class LayoutService {
         if(typeof _ == 'undefined') {
           this.storage.set('state', false).subscribe();
           this.layoutState.next(false);
+          console.log('state: '+ _);
         }
         else {
           this.layoutState.next(_);
@@ -65,6 +66,7 @@ export class LayoutService {
       if(typeof _ == 'undefined') {
         this.storage.set('bgcolor', '#46957B').subscribe();
         this.bgColor.next('#46957B');
+        console.log('color: '+ _);
       }
       else {
         this.bgColor.next(_);
@@ -76,6 +78,7 @@ export class LayoutService {
         const colors = ['#3171b7','#46957B', '#EB4034','#363534', '#FC9228', '#FC6128', '#820972'];
         this.storage.set('colors', colors).subscribe();
         this.colors = colors;
+        console.log('colors: '+ _);
       }
       else {
         this.colors = _;
