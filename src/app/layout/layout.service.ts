@@ -11,10 +11,10 @@ declare var $: any;
 })
 export class LayoutService {
 
-  state = true;
+  state:boolean;
 
-  layoutState = new BehaviorSubject<boolean>(this.state);
-  bgColor = new  BehaviorSubject<string>('#46957B');
+  layoutState = new Subject<boolean>();
+  bgColor = new  Subject<string>();
   colors = [];
 
   bread = new BehaviorSubject<any>({path: 'Widgets', icon: 'fa-cube'});
