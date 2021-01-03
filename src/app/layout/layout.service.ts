@@ -11,9 +11,9 @@ declare var $: any;
 })
 export class LayoutService {
 
-  state = true;
+  state;
 
-  layoutState = new BehaviorSubject<boolean>(this.state);
+  layoutState = new BehaviorSubject<boolean>(true);
   bgColor = new  BehaviorSubject<string>('#46957B');
   colors = [];
 
