@@ -56,7 +56,16 @@ export class LayoutService {
           this.layoutState.next(_);
         }
     });
-    // this.storage.get('bgcolor').subscribe(_ => console.log(_));
+
+    this.storage.get('bgcolor').subscribe((_:string) => {
+      if(typeof _ == 'undefined') {
+        this.storage.set('bgcolor', '#46957B').subscribe();
+      }
+      else {
+        this.bgColor.next(_);
+      }
+    });
+
     // this.storage.get('colors').subscribe(_ => console.log(_));
   }
 
