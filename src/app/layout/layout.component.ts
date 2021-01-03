@@ -66,18 +66,20 @@ export class LayoutComponent implements OnInit  {
 
 
   constructor(public lservice: LayoutService,private router: Router) {
+
+  }
+
+
+  ngOnInit(): void {
+    this.lservice.init();
+
     this.router.events.pipe(
       filter((e) => e instanceof NavigationEnd)
     ).subscribe((_: any) => {
       this.setBreadcrumb(_?.url);
     });
 
-    // layDb.colors.toArray().then(_=> this.colors = _);
-  }
-
-
-  ngOnInit(): void {
-    this.lservice.init();
+    this.colors = this.lservice.Colors;
   }
 
   setBreadcrumb(bread: string) {
