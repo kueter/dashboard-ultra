@@ -57,9 +57,9 @@
               {{'SideBar Background color'}}
             </div>
             <div class="row">
-                <div class="col-md-3" *ngFor="let item of colors">
-                        <div class="i-holder my-2" [style]="{'background-color': item?.value}" [title]="item?.value">
-                            <a (click)="lservice?.setColor(item?.value)"></a>
+                <div class="col-md-3" *ngFor="let item of (lservice?.colors)">
+                        <div class="i-holder my-2" [style]="{'background-color': item}" [title]="item">
+                            <a (click)="lservice?.setColor(item)"></a>
                         </div>
                 </div>
                 <div class="col-md-3" >

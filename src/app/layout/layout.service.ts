@@ -25,6 +25,7 @@ export class LayoutService {
 
 
   constructor(private storage: StorageMap, private router: Router) {
+    this.init();
     this.router.events.pipe(
       filter((e) => e instanceof NavigationEnd)
     ).subscribe((_: any) => {
@@ -36,7 +37,7 @@ export class LayoutService {
   setState() {
     this.state = !this.state;
     this.layoutState.next(this.state);
-    // this.storage.set('state',this.state).subscribe(_=> console.log(_));
+    this.storage.set('state',this.state).subscribe(_=> console.log(_));
   }
 
   setColor(item: string) {
@@ -53,44 +54,41 @@ export class LayoutService {
     return this.bgColor.asObservable();
   }
 
-  get Colors () {
-    return this.colors;
-  }
-
 
   init() {
     this.storage.get('state').subscribe((_:any) => {
+      console.log(_);
         if(typeof _ == 'undefined') {
           this.storage.set('state', false).subscribe();
           this.layoutState.next(false);
           console.log('state: '+ _);
         }
-        else {
-          this.layoutState.next(_);
-        }
+
+        this.layoutState.next(_);
+
     });
 
     this.storage.get('bgcolor').subscribe((_:string) => {
+      console.log(_);
       if(typeof _ == 'undefined') {
         this.storage.set('bgcolor', '#46957B').subscribe();
         this.bgColor.next('#46957B');
         console.log('color: '+ _);
       }
-      else {
-        this.bgColor.next(_);
-      }
+
+      this.bgColor.next(_);
     });
 
     this.storage.get('colors').subscribe((_: string []) => {
+      console.log(_);
       if(typeof _ == 'undefined') {
         const colors = ['#3171b7','#46957B', '#EB4034','#363534', '#FC9228', '#FC6128', '#820972'];
         this.storage.set('colors', colors).subscribe();
         this.colors = colors;
         console.log('colors: '+ _);
       }
-      else {
-        this.colors = _;
-      }
+
+      this.colors = _;
     });
 
   }
