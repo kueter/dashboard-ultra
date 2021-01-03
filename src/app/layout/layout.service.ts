@@ -77,6 +77,7 @@ export class LayoutService {
         this.colors = _;
       }
     });
+
   }
 
 
