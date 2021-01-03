@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { StorageMap } from '@ngx-pwa/local-storage';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 declare var $: any;
 
@@ -11,8 +11,7 @@ export class LayoutService {
 
   state: boolean;
 
-  // layoutState: BehaviorSubject<boolean>;
-  layoutState = new Subject<boolean>();
+  layoutState = new BehaviorSubject<boolean>(true);
   bgColor = new  Subject<string>();
   colors = [];
 
