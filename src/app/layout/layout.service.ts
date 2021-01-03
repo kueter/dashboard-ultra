@@ -22,11 +22,7 @@ export class LayoutService {
 
 
   constructor(private storage: StorageMap) {
-    // get init state
-
-
-    // get init background color
-
+    this.init();
   }
 
   setState() {
@@ -45,7 +41,7 @@ export class LayoutService {
     return this.layoutState.asObservable();
   }
 
-  getColor() {
+  getbColor() {
     return this.bgColor.asObservable();
   }
 
@@ -58,6 +54,7 @@ export class LayoutService {
     this.storage.get('state').subscribe((_:boolean) => {
         if(typeof _ == 'undefined') {
           this.storage.set('state', false).subscribe();
+          this.layoutState.next(false);
         }
         else {
           this.layoutState.next(_);
@@ -67,6 +64,7 @@ export class LayoutService {
     this.storage.get('bgcolor').subscribe((_:string) => {
       if(typeof _ == 'undefined') {
         this.storage.set('bgcolor', '#46957B').subscribe();
+        this.bgColor.next('#46957B');
       }
       else {
         this.bgColor.next(_);
@@ -77,6 +75,7 @@ export class LayoutService {
       if(typeof _ == 'undefined') {
         const colors = ['#3171b7','#46957B', '#EB4034','#363534', '#FC9228', '#FC6128', '#820972'];
         this.storage.set('colors', colors).subscribe();
+        this.colors = colors;
       }
       else {
         this.colors = _;
