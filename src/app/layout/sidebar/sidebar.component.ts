@@ -1,8 +1,5 @@
-import { EventEmitter, Input } from '@angular/core';
-import { Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { layDb } from '../layout.database';
 import { LayoutService } from '../layout.service';
 
 @Component({

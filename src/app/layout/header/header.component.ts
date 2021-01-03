@@ -1,7 +1,4 @@
-import { Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { stringify } from 'querystring';
 import { LayoutService } from '../layout.service';
 
 declare var $: any;

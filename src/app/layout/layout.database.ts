@@ -1,5 +1,3 @@
-import Dexie from 'dexie';
-
 interface UiState {
   id?: number,
   state: boolean
@@ -46,33 +44,3 @@ interface Colors {
 }
 
 
-class LayoutDatabase extends Dexie {
-
-  // Declare tables
-  public uistates: Dexie.Table<UiState,number>;
-  public sbarcolors: Dexie.Table<SbarColor,number>;
-  public nbarcolors: Dexie.Table<NbarColor,number>;
-  public events: Dexie.Table<Events,number>;
-  public personnes: Dexie.Table<Personnes,number>;
-  public charts: Dexie.Table<Charts,number>;
-  public colors: Dexie.Table<Colors,number>;
-
-
-  constructor() {
-    super("ultra-dashboard");
-
-    this.version(1).stores({
-      uistates: "id,state",
-      sbarcolors: "id,color",
-      nbarcolors: "id,color",
-      events: "++id,name,date,color,description",
-      personnes: "++id,name,datenaiss,email,job,grade",
-      colors: "++id,value",
-      charts: "++id,label,value"
-    });
-  }
-
-}
-
-
-export const layDb = new LayoutDatabase();

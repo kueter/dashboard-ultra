@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { StorageMap } from '@ngx-pwa/local-storage';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { layDb } from './layout.database';
 
 declare var $: any;
 
@@ -11,38 +11,29 @@ export class LayoutService {
 
   state: boolean;
 
-  layoutState = new Subject<boolean>();
-  bgColor = new Subject<string>();
+  layoutState: BehaviorSubject<boolean>;
+  bgColor: BehaviorSubject<string>;
 
   icon ='fa-minus-circle';
 
   chatstate = false;
 
-  constructor() {
+  constructor(private storage: StorageMap) {
     // get init state
-    layDb.uistates.toArray().then((_)=> {
-      this.state = _[0].state;
-      this.layoutState = new BehaviorSubject<boolean>(_[0].state);
-      console.log(_);
-    });
+
 
     // get init background color
-    layDb.sbarcolors.toArray().then((_) => {
-      console.log(_);
-      this.bgColor = new BehaviorSubject<string>(_[0].color);
-    });
 
   }
 
   setState() {
     this.state = !this.state;
     this.layoutState.next(this.state);
-    layDb.uistates.update(1, {state: this.state});
+    this.storage.set('state',this.state).subscribe(_=> console.log(_));
   }
 
   setColor(item: string) {
       this.bgColor.next(item);
-      layDb.sbarcolors.update(1, {color: item});
   }
 
 
@@ -56,15 +47,12 @@ export class LayoutService {
 
 
   initDb() {
-      // insert data
-      // layDb.colors.add({value: '#3171B7'});
 
-
-      // others data & reteived data
-
-      // layDb.uistates.toArray().then(_=> console.log(_));
   }
 
+
+
+  // settings box
 
   ocBox() {
     this.cBoxc();
@@ -82,18 +70,12 @@ export class LayoutService {
       .animate({ width: '300px' }, 800);
   }
 
-
-  // color settings box
-
   cBoxc() {
     $("._settingbox").fadeIn()
       .css({ top: '20%',right:'1%', position: 'fixed' })
       .animate({ width: '0px', right: '-10%' }, 800);
   }
 
-
-
-  // chats box
   ccBox() {
     $("._chatbox").fadeOut()
     .css({ bottom: '1%',right:'1%', position: 'fixed' })
