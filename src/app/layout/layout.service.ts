@@ -66,7 +66,15 @@ export class LayoutService {
       }
     });
 
-    // this.storage.get('colors').subscribe(_ => console.log(_));
+    this.storage.get('colors').subscribe((_:string) => {
+      if(typeof _ == 'undefined') {
+        const colors = ['#3171b7','#46957B', '#EB4034','#363534', '#FC9228', '#FC6128', '#820972'];
+        this.storage.set('colors', colors).subscribe();
+      }
+      else {
+        this.bgColor.next(_);
+      }
+    });
   }
 
 
