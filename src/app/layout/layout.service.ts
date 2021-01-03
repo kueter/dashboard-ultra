@@ -12,8 +12,8 @@ export class LayoutService {
   state: boolean;
 
   // layoutState: BehaviorSubject<boolean>;
-  layoutState = new  BehaviorSubject<boolean>(true);
-  bgColor: BehaviorSubject<string>;
+  layoutState: Subject<boolean>;
+  bgColor: Subject<string>;
 
   icon ='fa-minus-circle';
 
@@ -48,11 +48,14 @@ export class LayoutService {
 
 
   init() {
-
-    this.storage.get('state').subscribe((_) => {
-        console.log(_);
-    }
-    );
+    this.storage.get('state').subscribe((_:boolean) => {
+        if(typeof _ == 'undefined') {
+          this.storage.set('state', false).subscribe();
+        }
+        else {
+          this.layoutState.next(_);
+        }
+    });
     // this.storage.get('bgcolor').subscribe(_ => console.log(_));
     // this.storage.get('colors').subscribe(_ => console.log(_));
   }
