@@ -11,7 +11,7 @@ declare var $: any;
 })
 export class LayoutService {
 
-  state;
+  state: boolean;
 
   layoutState = new BehaviorSubject<boolean>(true);
   bgColor = new  BehaviorSubject<string>('#46957B');
@@ -26,12 +26,6 @@ export class LayoutService {
 
   constructor(private storage: StorageMap, private router: Router) {
     this.init();
-    this.router.events.pipe(
-      filter((e) => e instanceof NavigationEnd)
-    ).subscribe((_: any) => {
-      console.log(_);
-      this.setBreadcrumb(_?.url);
-    });
   }
 
   setState() {
@@ -56,6 +50,13 @@ export class LayoutService {
 
 
   init() {
+    this.router.events.pipe(
+      filter((e) => e instanceof NavigationEnd)
+    ).subscribe((_: any) => {
+      this.setBreadcrumb(_?.url);
+    });
+
+
     this.storage.get('state').subscribe((_:any) => {
       console.log(_);
         if(typeof _ == 'undefined') {
