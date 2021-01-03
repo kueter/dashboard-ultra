@@ -61,25 +61,15 @@ declare var $: any;
 })
 export class LayoutComponent implements OnInit  {
 
-  bread: any;
   colors: any;
 
-
-  constructor(public lservice: LayoutService,private router: Router) {
+  constructor(public lservice: LayoutService) {
 
   }
 
 
   ngOnInit(): void {
-    this.lservice.init();
-
-
-
-    this.colors = this.lservice.Colors;
   }
-
-
-
 
   // routes prepare and map with animation trigger
   preparedRoute(outlet: RouterOutlet) {
