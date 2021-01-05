@@ -1,2 +1,2 @@
-<!-- <loading ></loading> -->
-<router-outlet></router-outlet>
+<loading *ngIf="boot === false"></loading>
+<router-outlet *ngIf="boot === true"></router-outlet>
