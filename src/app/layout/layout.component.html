@@ -25,7 +25,7 @@
 </div>
 
 
-<!-- chaat box -->
+<!-- chats box -->
 <div class="_chatbox">
   <div class="card" [style]="{'border-color': (lservice?.getbColor()|async)}">
       <div class="card-header p-1" [style]="{'background-color':(lservice?.getbColor()|async)}">
@@ -39,7 +39,7 @@
       </div>
       <div class="card-body p-1">
           <div class="msg_container_base">
-
+              <div class="row msg_container" [ngClass]="{'base_sent': item?.track === 'sent', 'base_receive': item?.track === 'received'}" *ngFor="let item of (lservice?.getMessage()|async)"></div>
           </div>
       </div>
       <div class="card-footer p-1" [style]="{'border-color': (lservice?.getbColor()|async)}">
