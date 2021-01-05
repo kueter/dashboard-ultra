@@ -34,7 +34,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    PerfectScrollbarModule,
+    PerfectScrollbarModule
   ]
 })
 export class SharedModule { }
