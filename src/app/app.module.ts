@@ -10,6 +10,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { LoadingComponent } from './loading/loading.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { environment } from '../environments/environment';
     HeaderComponent,
     SidebarComponent,
     LayoutComponent,
-    LoadingComponent
+    LoadingComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
