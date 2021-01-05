@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LayoutService } from '../../layout.service';
 
 @Component({
   selector: 'app-widgets-ui',
@@ -9,7 +10,7 @@ export class WidgetsUiComponent implements OnInit {
 
   cards = [];
 
-  constructor() { }
+  constructor(public lservice: LayoutService) { }
 
   ngOnInit(): void {
   }
