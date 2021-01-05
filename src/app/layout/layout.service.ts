@@ -20,9 +20,9 @@ export class LayoutService {
   bread = new BehaviorSubject<any>({path: 'Widgets', icon: 'fa-cube'});
 
   messages = new BehaviorSubject<any[]>([
-    { track: 'receive', message: '', time: '', img: '' },
+    { track: 'received', message: '', time: '', img: '' },
     { track: 'sent', message: '', time: '', img: '' },
-    { track: 'receive', message: '', time: '', img: '' }
+    { track: 'received', message: '', time: '', img: '' }
   ]);
 
   icon ='fa-minus-circle';

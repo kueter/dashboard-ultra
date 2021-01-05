@@ -7,12 +7,12 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-d">
       <div class="ind_box">
-            <i [class]="'fal '+ (lservice?.bread|async)?.icon" [style]="{'color':(lservice?.getbColor()|async)}"></i>
+        <i [class]="'fal '+ (lservice?.bread|async)?.icon" [style]="{'color':(lservice?.getbColor()|async)}"></i>
       </div>
       <div class="current_path">
-          <span class="def" [style]="{'color':(lservice?.getbColor()|async)}">{{'Dashboard'}}</span>
-          <span class="sep"><i class="fal fa-chevron-right" [style]="{'color':(lservice?.getbColor()|async)}"></i></span>
-          <span class="curr" [style]="{'color':(lservice?.getbColor()|async)}">{{(lservice?.bread|async)?.path}}</span>
+        <span class="def" [style]="{'color':(lservice?.getbColor()|async)}">{{'Dashboard'}}</span>
+        <span class="sep"><i class="fal fa-chevron-right" [style]="{'color':(lservice?.getbColor()|async)}"></i></span>
+        <span class="curr" [style]="{'color':(lservice?.getbColor()|async)}">{{(lservice?.bread|async)?.path}}</span>
       </div>
     </div>
 
@@ -28,62 +28,93 @@
 <!-- chats box -->
 <div class="_chatbox">
   <div class="card" [style]="{'border-color': (lservice?.getbColor()|async)}">
-      <div class="card-header p-1" [style]="{'background-color':(lservice?.getbColor()|async)}">
-          <div class="bar">
-            <span>{{'Chat Box'}}</span>
-          </div>
-          <div class="actions">
-              <button class="btn" (click)="lservice?.reduceBox()"><i [class]="'fal '+ lservice?.icon"></i></button>&nbsp;
-              <button class="btn" (click)="lservice?.ccBox()"><i class="fal fa-times-circle"></i></button>
-          </div>
+    <div class="card-header p-1" [style]="{'background-color':(lservice?.getbColor()|async)}">
+      <div class="bar">
+        <span>{{'Chat Box'}}</span>
       </div>
-      <div class="card-body p-1">
-          <div class="msg_container_base">
-              <div class="row msg_container" [ngClass]="{'base_sent': item?.track === 'sent', 'base_receive': item?.track === 'received'}" *ngFor="let item of (lservice?.getMessage()|async)"></div>
-          </div>
+      <div class="actions">
+        <button class="btn" (click)="lservice?.reduceBox()"><i [class]="'fal '+ lservice?.icon"></i></button>&nbsp;
+        <button class="btn" (click)="lservice?.ccBox()"><i class="fal fa-times-circle"></i></button>
       </div>
-      <div class="card-footer p-1" [style]="{'border-color': (lservice?.getbColor()|async)}">
-        <div class="emoji">
-            <button class="btn"><i class="fal fa-smile" [style]="{'color':(lservice?.getbColor()|async)}"></i></button>&nbsp;
-            <button class="btn"><i class="fal fa-paperclip" [style]="{'color':(lservice?.getbColor()|async)}"></i></button>
+    </div>
+    <div class="card-body p-1">
+      <div class="msg_container_base">
+        <div class="row msg_container"
+          [ngClass]="{'base_sent': item?.track === 'sent', 'base_receive': item?.track === 'received'}"
+          *ngFor="let item of (lservice?.getMessage()|async)">
+          <div *ngIf="item?.track === 'sent'">
+            <div class="col-md-10 col-xs-10">
+              <div class="messages msg_sent">
+                <p>that mongodb thing looks good, huh?
+                  tiny master db, and huge document store</p>
+                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-2 avatar">
+              <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
+                class=" img-responsive ">
+            </div>
+          </div>
+
+          <div *ngIf="item?.track === 'received'">
+            <div class="col-md-2 col-xs-2 avatar">
+              <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
+                class=" img-responsive ">
+            </div>
+            <div class="col-md-10 col-xs-10">
+              <div class="messages msg_receive">
+                <p>that mongodb thing looks good, huh?
+                  tiny master db, and huge document store</p>
+                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form">
-            <input type="text">
-            <i class="fal fa-paper-plane" [style]="{'color':(lservice?.getbColor()|async)}"></i>
-        </div>
       </div>
+    </div>
+    <div class="card-footer p-1" [style]="{'border-color': (lservice?.getbColor()|async)}">
+      <div class="emoji">
+        <button class="btn"><i class="fal fa-smile"
+            [style]="{'color':(lservice?.getbColor()|async)}"></i></button>&nbsp;
+        <button class="btn"><i class="fal fa-paperclip" [style]="{'color':(lservice?.getbColor()|async)}"></i></button>
+      </div>
+      <div class="form">
+        <input type="text">
+        <i class="fal fa-paper-plane" [style]="{'color':(lservice?.getbColor()|async)}"></i>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- color picket -->
 <div class="_settingbox">
-    <div class="card">
-        <div class="card-body">
-            <div class="hdr_">
-              {{'SideBar Background color'}}
-            </div>
-            <div class="row">
-                <div class="col-md-3" *ngFor="let item of (lservice?.colors)">
-                        <div class="i-holder my-2" [style]="{'background-color': item}" [title]="item">
-                            <a (click)="lservice?.setColor(item)"></a>
-                        </div>
-                </div>
-                <div class="col-md-3" >
-                  <div class="i-holder my-2 cle" (click)="lservice?.cBoxc()" title="Close">
-                      <i class="fal fa-times"></i>
-                  </div>
-                </div>
-            </div>
-            <div class="hdr_">
-              {{'NavBar Background color'}}
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-
-                </div>
-            </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="hdr_">
+        {{'SideBar Background color'}}
+      </div>
+      <div class="row">
+        <div class="col-md-3" *ngFor="let item of (lservice?.colors)">
+          <div class="i-holder my-2" [style]="{'background-color': item}" [title]="item">
+            <a (click)="lservice?.setColor(item)"></a>
+          </div>
         </div>
+        <div class="col-md-3">
+          <div class="i-holder my-2 cle" (click)="lservice?.cBoxc()" title="Close">
+            <i class="fal fa-times"></i>
+          </div>
+        </div>
+      </div>
+      <div class="hdr_">
+        {{'NavBar Background color'}}
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 
@@ -91,14 +122,15 @@
 <div class="modal fade connex_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-        <div class="_container">
-            <div class="_stick" [style]="{'background-color':(lservice?.getbColor()|async)}" [@x-x0]="state === false ? 'left': 'right'">
-              <img src="../../assets/img/lightbulb.png" alt="">
-            </div>
-            <div class="_viewf" [@x-y0]="state === false ? 'right': 'left'">
-                <app-auth (state)="getStmt($event)"></app-auth>
-            </div>
+      <div class="_container">
+        <div class="_stick" [style]="{'background-color':(lservice?.getbColor()|async)}"
+          [@x-x0]="state === false ? 'left': 'right'">
+          <img src="../../assets/img/lightbulb.png" alt="">
         </div>
+        <div class="_viewf" [@x-y0]="state === false ? 'right': 'left'">
+          <app-auth (state)="getStmt($event)"></app-auth>
+        </div>
+      </div>
     </div>
   </div>
 </div>
