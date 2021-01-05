@@ -165,8 +165,6 @@ export class LayoutService {
     return this.messages.asObservable();
   }
 
-
-
   //
 
   setBreadcrumb(bread: string) {
