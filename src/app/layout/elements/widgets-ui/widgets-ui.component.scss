@@ -6,3 +6,21 @@
   border: 0px !important;
 }
 
+
+.title {
+  font-weight: bold;
+  font-size: 15px;
+  color: #969292;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    color: #969292;
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
