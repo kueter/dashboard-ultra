@@ -8,7 +8,12 @@ import { LayoutService } from '../../layout.service';
 })
 export class WidgetsUiComponent implements OnInit {
 
-  cards = [];
+  cards = [
+    {title: '', detail: '', count: ''},
+    {title: '', detail: '', count: ''},
+    {title: '', detail: '', count: ''},
+    {title: '', detail: '', count: ''},
+  ];
 
   constructor(public lservice: LayoutService) { }
 
