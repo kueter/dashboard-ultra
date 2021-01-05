@@ -27,7 +27,7 @@
       <div class="__menu">
             <div class="__item">
                 <a (click)="lservice?.ocBox()"> <i class="fal fa-comments"  title="chats" [style]="{'color':(lservice?.getbColor()|async)}"></i>
-                  <span class="badge">2</span></a>
+                  <span class="badge" [style]="{'color':(lservice?.getbColor()|async)}">2</span></a>
               </div>
               <div class="__item">
                 <a > <i class="fal fa-bell"  title="notify"></i>
