@@ -19,6 +19,8 @@ export class LayoutService {
 
   bread = new BehaviorSubject<any>({path: 'Widgets', icon: 'fa-cube'});
 
+  messages = new BehaviorSubject<any[]>([]);
+
   icon ='fa-minus-circle';
 
   chatstate = false;
