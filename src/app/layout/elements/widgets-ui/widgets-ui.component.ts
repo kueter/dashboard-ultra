@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WidgetsUiComponent implements OnInit {
 
+  cards = [];
+
   constructor() { }
 
   ngOnInit(): void {
