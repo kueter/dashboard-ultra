@@ -4,4 +4,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .m404 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    // height: 100px;
+
+    span {
+      font-weight: bold;
+      font-size: 100px;
+    }
+  }
+
 }
+
