@@ -116,6 +116,7 @@ export class LayoutComponent implements OnInit  {
       this.lservice.setMessage({ track: 'sent', message: form.message, time: 'you • 51 min', img: '../../assets/img/AF2.png' })
       this.perfectScroll.directiveRef.update();
       this.perfectScroll.directiveRef.scrollToBottom(-100, 500);
-    }
+      this.mForm.reset();
+  }
 
 }
