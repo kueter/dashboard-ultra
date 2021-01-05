@@ -1,5 +1,6 @@
 import { query, style, animate, group, trigger, transition, keyframes, state  } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, take } from 'rxjs/operators';
 import { LayoutService } from './layout.service';
@@ -85,7 +86,7 @@ export class LayoutComponent implements OnInit  {
 
   colors: any;
   state = false;
-  message = '';
+  nForm: FormGroup;
 
   constructor(public lservice: LayoutService) {
 
@@ -93,6 +94,9 @@ export class LayoutComponent implements OnInit  {
 
 
   ngOnInit(): void {
+    this.nForm = new FormGroup({
+      message: new FormControl('', Validators.required)
+    });
   }
 
   // routes prepare and map with animation trigger
@@ -105,7 +109,7 @@ export class LayoutComponent implements OnInit  {
   }
 
   send() {
-
+      console.log('msg: '+ this.nForm.value);
   }
 
 }
