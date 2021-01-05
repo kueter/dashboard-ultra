@@ -7,6 +7,9 @@
                         <i [class]="item?.icon" [style]="{'color': (lservice?.getbColor()|async)}"></i>
                         <span>{{item?.mount}}</span>
                     </div>
+                    <div class="foot mt-2">
+                        <span [style]="{'color': (lservice?.getbColor()|async)}">{{item?.detail}}</span>
+                    </div>
                 </div>
             </div>
     </div>
