@@ -1,7 +1,6 @@
 <div *ngIf="_s === true"  class="row">
   <div class="col-md-9 mx-auto">
     <form [formGroup]="AuthForm">
-
       <div class="h_p">
           <img src="../../assets/img/AM3.png" alt="" srcset="">
       </div>
@@ -47,15 +46,15 @@
         <label for="name"><i class="far fa-user mr-2"></i>{{'Name'}}</label>
       </div>
       <div class="field">
-        <small class="dcolor"  *ngIf="(email.statusChanges|async) === 'INVALID'">{{'Email is invalid'}}</small>
-        <small class="vcolor" [style]="{'color':(lservice?.getbColor()|async)}"  *ngIf="(email.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
-        <input type="text" id="email" formControlName="email" [ngStyle]="(email.statusChanges|async) === 'VALID'? {'border-color':(lservice?.getbColor()|async)}:{}" placeholder="Ek@example.com">
+        <small class="dcolor"  *ngIf="(nemail.statusChanges|async) === 'INVALID'">{{'Email is invalid'}}</small>
+        <small class="vcolor" [style]="{'color':(lservice?.getbColor()|async)}"  *ngIf="(nemail.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
+        <input type="text" id="email" formControlName="email" [ngStyle]="(nemail.statusChanges|async) === 'VALID'? {'border-color':(lservice?.getbColor()|async)}:{}" placeholder="Ek@example.com">
         <label for="email"><i class="fal fa-envelope mr-2"></i>{{'Email'}}</label>
       </div>
       <div class="field">
-        <small class="dcolor" *ngIf="(password.statusChanges|async) === 'INVALID'">{{'Password is invalid'}}</small>
-        <small class="vcolor"  [style]="{'color':(lservice?.getbColor()|async)}" *ngIf="(password.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
-        <input type="password" id="password" formControlName="password" [ngStyle]="(password.statusChanges|async) === 'VALID'? {'border-color':(lservice?.getbColor()|async)}:{}" placeholder="********">
+        <small class="dcolor" *ngIf="(npassword.statusChanges|async) === 'INVALID'">{{'Password is invalid'}}</small>
+        <small class="vcolor"  [style]="{'color':(lservice?.getbColor()|async)}" *ngIf="(npassword.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
+        <input type="password" id="password" formControlName="password" [ngStyle]="(npassword.statusChanges|async) === 'VALID'? {'border-color':(lservice?.getbColor()|async)}:{}" placeholder="********">
         <label for="password"><i class="fal fa-lock mr-2"></i>{{'Password'}}</label>
       </div>
 
