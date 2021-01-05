@@ -25,6 +25,7 @@
 </div>
 
 
+<!-- chaat box -->
 <div class="_chatbox">
   <div class="card" [style]="{'border-color': (lservice?.getbColor()|async)}">
       <div class="card-header p-1" [style]="{'background-color':(lservice?.getbColor()|async)}">
@@ -50,6 +51,7 @@
   </div>
 </div>
 
+<!-- color picket -->
 <div class="_settingbox">
     <div class="card">
         <div class="card-body">
@@ -78,4 +80,21 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<!-- auth modal -->
+<div class="modal fade connex_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="_container">
+            <div class="_stick" [@x-x0]="state === false ? 'left': 'right'">
+              <img src="../assets/img/lightbulb.png" alt="">
+            </div>
+            <div class="_viewf" [@x-y0]="state === false ? 'right': 'left'">
+                <app-auth (state)="getStmt($event)"></app-auth>
+            </div>
+        </div>
+    </div>
+  </div>
 </div>

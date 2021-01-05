@@ -1,4 +1,4 @@
-import { query, style, animate, group, trigger, transition  } from '@angular/animations';
+import { query, style, animate, group, trigger, transition, keyframes, state  } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, take } from 'rxjs/operators';
@@ -56,12 +56,35 @@ declare var $: any;
         transition('forms  => scheduler', right),
         transition('forms  => composants', right),
         transition('forms  => booker', right),
+    ]),
+    trigger('x-x0', [
+      state('left', style({ transform: 'translateX(0%)' })),
+      state('right', style({ transform: 'translateX(235%)' })),
+      transition('left => right', animate('1s ease-in-out', keyframes([
+        style({ transform: 'translateX(235%)' })
+      ]))),
+      transition('right => left', animate('1s ease-in-out', keyframes([
+        style({ transform: 'translateX(0%)' })
+      ])))
+    ]),
+
+    trigger('x-y0', [
+      state('right', style({ transform: 'translateX(0%)' })),
+      state('left', style({ transform: 'translateX(-42%)' })),
+      transition('right => left', animate('1s ease-in-out', keyframes([
+        style({ transform: 'translateX(-42%)' })
+      ]))),
+      transition('left => right', animate('1s ease-in-out', keyframes([
+        style({ transform: 'translateX(0%)' })
+      ])))
     ])
+
   ]
 })
 export class LayoutComponent implements OnInit  {
 
   colors: any;
+  state = false;
 
   constructor(public lservice: LayoutService) {
 
@@ -74,6 +97,10 @@ export class LayoutComponent implements OnInit  {
   // routes prepare and map with animation trigger
   preparedRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
+
+  getStmt(event: any) {
+    this.state = event;
   }
 
 }
