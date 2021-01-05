@@ -89,7 +89,7 @@
     <div class="modal-content">
         <div class="_container">
             <div class="_stick" [style]="{'background-color':(lservice?.getbColor()|async)}" [@x-x0]="state === false ? 'left': 'right'">
-              <img src="../assets/img/lightbulb.png" alt="">
+              <img src="../../assets/img/lightbulb.png" alt="">
             </div>
             <div class="_viewf" [@x-y0]="state === false ? 'right': 'left'">
                 <app-auth (state)="getStmt($event)"></app-auth>
