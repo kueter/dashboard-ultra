@@ -9,7 +9,7 @@ import { LayoutService } from '../../layout.service';
 export class WidgetsUiComponent implements OnInit {
 
   cards = [
-    { icon: '' ,title: 'Requests by day', detail: '', mount: '1.5k'},
+    { icon: 'fal fa-wifi' ,title: 'Requests by day', detail: '', mount: '1.5k'},
     { icon: 'fal fa-users' ,title: 'Client Flux', detail: '', mount: '15k'},
     { icon: 'fal fa-university' ,title: 'Amount Bank', detail: '', mount: '12 M'},
     { icon: 'fal fa-peapole-carry' ,title: 'Employee', detail: '', mount: '0.5k'},
