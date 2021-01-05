@@ -2,7 +2,7 @@
   <div class="col-md-9 mx-auto">
     <form [formGroup]="AuthForm">
       <div class="h_p">
-          <img src="../../assets/img/AM3.png" alt="" srcset="">
+          <img src="../../assets/img/AM3.png" alt="" srcset="" [style]="{'border': '3px solid '+(lservice?.getbColor()|async)}">
       </div>
       <div class="field">
         <small class="dcolor" *ngIf="(email.statusChanges|async) === 'INVALID'">{{'Email is invalid'}}</small>
