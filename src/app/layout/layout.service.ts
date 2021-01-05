@@ -19,11 +19,12 @@ export class LayoutService {
 
   bread = new BehaviorSubject<any>({path: 'Widgets', icon: 'fa-cube'});
 
-  messages = new BehaviorSubject<any[]>([
-    { track: 'received', message: 'Somebody there, i need help', time: 'Kena • 51 min', img: '../../assets/img/AF2.png' },
-    { track: 'sent', message: 'Hello Kena, what can i do for you ?', time: 'You • 2 min', img: '../../assets/img/AM3.png' },
-    { track: 'received', message: 'It \'s about socket io in angular ! ', time: 'Kena • 1 min', img: '../../assets/img/AF2.png' }
-  ]);
+  messages = [ { track: 'received', message: 'Somebody there, i need help', time: 'Kena • 51 min', img: '../../assets/img/AF2.png' },
+  { track: 'sent', message: 'Hello Kena, what can i do for you ?', time: 'You • 2 min', img: '../../assets/img/AM3.png' },
+  { track: 'received', message: 'It \'s about socket io in angular ! ', time: 'Kena • 1 min', img: '../../assets/img/AF2.png' }
+  ];
+
+  messageSubject = new BehaviorSubject<any[]>(this.messages);
 
   icon ='fa-minus-circle';
 
@@ -158,11 +159,12 @@ export class LayoutService {
   // Chat
 
   setMessage(item: any) {
-    this.messages.next(item);
+    this.messages.push(item);
+    this.messageSubject.next(this.messages);
   }
 
   getMessage() {
-    return this.messages.asObservable();
+    return this.messageSubject.asObservable();
   }
 
   //

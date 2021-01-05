@@ -1,7 +1,8 @@
 import { query, style, animate, group, trigger, transition, keyframes, state  } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { PerfectScrollbarComponent } from 'ngx-perfect-scrollbar';
 import { filter, take } from 'rxjs/operators';
 import { LayoutService } from './layout.service';
 
@@ -88,6 +89,8 @@ export class LayoutComponent implements OnInit  {
   state = false;
   mForm: FormGroup;
 
+  @ViewChild('perfectScroll') perfectScroll: PerfectScrollbarComponent;
+
   constructor(public lservice: LayoutService) {
 
   }
@@ -109,7 +112,10 @@ export class LayoutComponent implements OnInit  {
   }
 
   send() {
-      console.log('msg: '+ this.mForm.value);
-  }
+    const form = this.mForm.value;
+      this.lservice.setMessage({ track: 'sent', message: form.message, time: 'you • 51 min', img: '../../assets/img/AF2.png' })
+      this.perfectScroll.directiveRef.update();
+      this.perfectScroll.directiveRef.scrollToBottom(-100, 500);
+    }
 
 }
