@@ -85,6 +85,7 @@ export class LayoutComponent implements OnInit  {
 
   colors: any;
   state = false;
+  message = '';
 
   constructor(public lservice: LayoutService) {
 
@@ -101,6 +102,10 @@ export class LayoutComponent implements OnInit  {
 
   getStmt(event: any) {
     this.state = event;
+  }
+
+  send() {
+
   }
 
 }
