@@ -86,7 +86,7 @@ export class LayoutComponent implements OnInit  {
 
   colors: any;
   state = false;
-  nForm: FormGroup;
+  mForm: FormGroup;
 
   constructor(public lservice: LayoutService) {
 
@@ -94,7 +94,7 @@ export class LayoutComponent implements OnInit  {
 
 
   ngOnInit(): void {
-    this.nForm = new FormGroup({
+    this.mForm = new FormGroup({
       message: new FormControl('', Validators.required)
     });
   }
@@ -109,7 +109,7 @@ export class LayoutComponent implements OnInit  {
   }
 
   send() {
-      console.log('msg: '+ this.nForm.value);
+      console.log('msg: '+ this.mForm.value);
   }
 
 }
