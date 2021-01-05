@@ -20,9 +20,9 @@ export class LayoutService {
   bread = new BehaviorSubject<any>({path: 'Widgets', icon: 'fa-cube'});
 
   messages = new BehaviorSubject<any[]>([
-    { track: 'received', message: '', time: '', img: '' },
-    { track: 'sent', message: '', time: '', img: '' },
-    { track: 'received', message: '', time: '', img: '' }
+    { track: 'received', message: 'Somebody there, i need help', time: 'Timothy • 51 min', img: '../../assets/img/AF2.png' },
+    { track: 'sent', message: 'Hello Tim, what can i do for you ?', time: 'You • 2 min', img: '../../assets/img/AM3.png' },
+    { track: 'received', message: 'It \'s about socket io in angular ! ', time: 'Timothy • 1 min', img: '../../assets/img/AF2.png' }
   ]);
 
   icon ='fa-minus-circle';
