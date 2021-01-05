@@ -4,7 +4,7 @@
   display: flex;
   z-index: 8;
   padding: 60px 0 0 280px;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .inner__o {
@@ -25,8 +25,8 @@
       height: 40px;
       border: none;
       background-color: #fff;
-      border-radius: .25rem;
-      box-shadow: 0px .7px 0.16875rem 0.1rem rgba(0, 0, 0, 0.1);
+      border-radius: 0.25rem;
+      box-shadow: 0px 0.7px 0.16875rem 0.1rem rgba(0, 0, 0, 0.1);
     }
     .current_path {
       width: 70%;
@@ -52,72 +52,79 @@
   }
 }
 
-
-
 ._chatbox {
   z-index: 20;
   position: fixed;
   width: 280px;
   height: 0px;
   overflow: hidden;
-    .card {
-      height: 100%;
-      border:  2px solid;
-      .card-header {
+  .card {
+    height: 100%;
+    border: 2px solid;
+    .card-header {
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: none !important;
+      box-shadow: 0px 6px 11px -7px rgba(0, 0, 0, 0.2);
+      .btn {
+        padding: 0%;
         color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: none!important;
-        box-shadow: 0px 6px 11px -7px rgba(0,0,0,0.2);
-        .btn {
-          padding: 0%;
-          color: #fff;
+        outline: none;
+        box-shadow: none !important;
+      }
+    }
+
+    .card-body {
+      .msg_container_base {
+        margin: 0;
+        padding: 0 10px 10px;
+        max-height: 300px;
+        overflow-x: hidden;
+      }
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      border-top: 2px solid;
+
+      .form {
+        width: 90%;
+        position: relative;
+        input {
+          // width: 80%;
+          background-color: transparent;
+          border: none !important;
           outline: none;
-          box-shadow: none!important;
+          padding-right: 1.5rem;
+          color: rgb(126, 122, 122);
+          line-height: 1rem;
+        }
+
+        i {
+          position: absolute;
+          color: #46957b;
+          right: 2%;
+          top: 20%;
         }
       }
 
-      .card-footer {
+      .emoji {
+        width: 20%;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #fff;
-        border-top:2px solid;
-
-        .form {
-          width: 90%;
-          position: relative;
-          input {
-            // width: 80%;
-            background-color: transparent;
-            border: none!important;
-            outline: none;
-            padding-right: 1.5rem;
-            color: rgb(126, 122, 122);
-            line-height: 1rem;
-          }
-
+        .btn {
+          padding: 0%;
           i {
-              position: absolute;
-              color: #46957b;
-              right: 2%;
-              top: 20%;
-          }
-        }
-
-        .emoji {
-          width: 20%;
-          display: flex;
-          .btn {
-            padding: 0%;
-            i {
-              color: #46957b;
-            }
+            color: #46957b;
           }
         }
       }
     }
+  }
 }
 
 ._settingbox {
@@ -130,9 +137,8 @@
   .card {
     height: 100%;
     border: none;
-    box-shadow: 2px -1px 10px -7px rgba(0,0,0,0.1);
-    .card-body  {
-
+    box-shadow: 2px -1px 10px -7px rgba(0, 0, 0, 0.1);
+    .card-body {
       .i-holder {
         height: 40px;
         width: 40px;
@@ -169,8 +175,6 @@
     }
   }
 }
-
-
 
 .modal {
   ._container {
