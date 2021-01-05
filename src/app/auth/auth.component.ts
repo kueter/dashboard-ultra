@@ -51,6 +51,14 @@ export class AuthComponent implements OnInit {
     return this.RegForm.get('name');
   }
 
+  get nemail() {
+    return this.RegForm.get('email');
+  }
+
+  get npassword() {
+    return this.RegForm.get('password');
+  }
+
   get password() {
     return this.AuthForm.get('password');
   }
@@ -58,6 +66,8 @@ export class AuthComponent implements OnInit {
   get email() {
     return this.AuthForm.get('email');
   }
+
+
 
 
 

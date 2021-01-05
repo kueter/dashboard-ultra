@@ -8,13 +8,13 @@
       <div class="field">
         <small class="dcolor" *ngIf="(email.statusChanges|async) === 'INVALID'">{{'Email is invalid'}}</small>
         <small class="vcolor" [style]="{'color':(lservice?.getbColor()|async)}" *ngIf="(email.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
-        <input type="text" id="email" formControlName="email" [ngClass]="{'bvcolor': (email.statusChanges|async) === 'VALID', 'bdcolor': (email.statusChanges|async) === 'INVALID'}" placeholder="Ek@example.com">
+        <input type="text" id="email" formControlName="email" [ngStyle]="(email.statusChanges|async) === 'VALID'? {'border-color':(lservice?.getbColor()|async)}:{}" placeholder="Ek@example.com">
         <label for="email"><i class="fal fa-envelope mr-2"></i>{{'Email'}}</label>
       </div>
       <div class="field">
         <small class="dcolor" *ngIf="(password.statusChanges|async) === 'INVALID'">{{'Password is invalid'}}</small>
         <small class="vcolor" [style]="{'color':(lservice?.getbColor()|async)}"  *ngIf="(password.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
-        <input type="password" id="password" formControlName="password" [ngClass]="{'bvcolor': (password.statusChanges|async) === 'VALID', 'bdcolor': (password.statusChanges|async) === 'INVALID'}" placeholder="********">
+        <input type="password" id="password" formControlName="password" [ngStyle]="(password.statusChanges|async) === 'VALID'? {'border-color':(lservice?.getbColor()|async)}:{}" placeholder="********">
         <label for="password"><i class="fal fa-lock mr-2"></i>{{'Password'}}</label>
       </div>
 
@@ -43,19 +43,19 @@
     <div class="field">
         <small class="dcolor" *ngIf="(name.statusChanges|async) === 'INVALID'">{{'Name is invalid'}}</small>
         <small  class="vcolor" [style]="{'color':(lservice?.getbColor()|async)}" *ngIf="(name.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
-        <input type="text" id="name" formControlName="name" placeholder="Edward Koss" [ngClass]="{'bvcolor': (name.statusChanges|async) === 'VALID', 'bdcolor': (name.statusChanges|async) === 'INVALID'}">
+        <input type="text" id="name" formControlName="name" placeholder="Edward Koss" [ngStyle]="(name.statusChanges|async) === 'VALID'? {'border-color':(lservice?.getbColor()|async)}:{}">
         <label for="name"><i class="far fa-user mr-2"></i>{{'Name'}}</label>
       </div>
       <div class="field">
-        <small class="dcolor" *ngIf="(email.statusChanges|async) === 'INVALID'">{{'Email is invalid'}}</small>
+        <small class="dcolor"  *ngIf="(email.statusChanges|async) === 'INVALID'">{{'Email is invalid'}}</small>
         <small class="vcolor" [style]="{'color':(lservice?.getbColor()|async)}"  *ngIf="(email.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
-        <input type="text" id="email" formControlName="email" [ngClass]="{'bvcolor': (email.statusChanges|async) === 'VALID', 'bdcolor': (email.statusChanges|async) === 'INVALID'}" placeholder="Ek@example.com">
+        <input type="text" id="email" formControlName="email" [ngStyle]="(email.statusChanges|async) === 'VALID'? {'border-color':(lservice?.getbColor()|async)}:{}" placeholder="Ek@example.com">
         <label for="email"><i class="fal fa-envelope mr-2"></i>{{'Email'}}</label>
       </div>
       <div class="field">
         <small class="dcolor" *ngIf="(password.statusChanges|async) === 'INVALID'">{{'Password is invalid'}}</small>
         <small class="vcolor"  [style]="{'color':(lservice?.getbColor()|async)}" *ngIf="(password.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
-        <input type="password" id="password" formControlName="password" [ngClass]="{'bvcolor': (password.statusChanges|async) === 'VALID', 'bdcolor': (password.statusChanges|async) === 'INVALID'}" placeholder="********">
+        <input type="password" id="password" formControlName="password" [ngStyle]="(password.statusChanges|async) === 'VALID'? {'border-color':(lservice?.getbColor()|async)}:{}" placeholder="********">
         <label for="password"><i class="fal fa-lock mr-2"></i>{{'Password'}}</label>
       </div>
 
