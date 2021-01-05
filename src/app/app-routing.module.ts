@@ -7,6 +7,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/dashboard/widgets', pathMatch:'full'},
     { path: 'dashboard', component: LayoutComponent,
     children: [
+      { path: '', redirectTo: '/dashboard/widgets', pathMatch: 'full'},
       { path: 'widgets', loadChildren: () => import('./layout/elements/widgets-ui/widgets-ui.module').then(m => m.WidgetsUiModule), data:{ animation: 'widgets'} },
       { path: 'layouts', loadChildren: () => import('./layout/elements/layouts-ui/layouts-ui.module').then(m => m.LayoutsUiModule), data:{ animation: 'layouts'} },
       { path: 'charts', loadChildren: () => import('./layout/elements/charts-ui/charts-ui.module').then(m => m.ChartsUiModule), data:{ animation: 'charts'} },
