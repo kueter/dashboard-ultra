@@ -82,7 +82,7 @@
 
         img {
           display: block;
-          width: 100%;
+          width: 80%;
         }
         .avatar {
           position: relative;
@@ -92,6 +92,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          border-radius: 50%;
         }
 
         .base_receive > .avatar:after {
