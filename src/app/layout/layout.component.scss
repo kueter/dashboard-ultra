@@ -79,10 +79,11 @@
     .card-body {
       overflow: hidden;
       .msg_container_base {
-        margin: 0;
-        padding: 0 10px 10px;
-        max-height: 300px;
-        overflow: hidden;
+        .image-responsive {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
 
         img {
           display: block;
@@ -91,6 +92,7 @@
         .avatar {
           position: relative;
         }
+
         .base_receive > .avatar:after {
           content: "";
           position: absolute;
@@ -107,6 +109,7 @@
           justify-content: flex-end;
           align-items: flex-end;
         }
+
         .base_sent > .avatar:after {
           content: "";
           position: absolute;
