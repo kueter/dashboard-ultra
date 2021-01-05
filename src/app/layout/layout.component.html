@@ -88,7 +88,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div class="_container">
-            <div class="_stick" [@x-x0]="state === false ? 'left': 'right'">
+            <div class="_stick" [style]="{'background-color':(lservice?.getbColor()|async)}" [@x-x0]="state === false ? 'left': 'right'">
               <img src="../assets/img/lightbulb.png" alt="">
             </div>
             <div class="_viewf" [@x-y0]="state === false ? 'right': 'left'">
