@@ -1,0 +1,87 @@
+<div *ngIf="_s === true"  class="row">
+  <div class="col-md-9 mx-auto">
+    <form [formGroup]="AuthForm">
+
+      <div class="h_p">
+          <img src="../../assets/img/AM3.png" alt="" srcset="">
+      </div>
+      <div class="field">
+        <small class="dcolor" *ngIf="(email.statusChanges|async) === 'INVALID'">{{'Email is invalid'}}</small>
+        <small class="vcolor"  *ngIf="(email.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
+        <input type="text" id="email" formControlName="email" [ngClass]="{'bvcolor': (email.statusChanges|async) === 'VALID', 'bdcolor': (email.statusChanges|async) === 'INVALID'}" placeholder="Ek@example.com">
+        <label for="email"><i class="fal fa-envelope mr-2"></i>{{'Email'}}</label>
+      </div>
+      <div class="field">
+        <small class="dcolor" *ngIf="(password.statusChanges|async) === 'INVALID'">{{'Password is invalid'}}</small>
+        <small class="vcolor"  *ngIf="(password.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
+        <input type="password" id="password" formControlName="password" [ngClass]="{'bvcolor': (password.statusChanges|async) === 'VALID', 'bdcolor': (password.statusChanges|async) === 'INVALID'}" placeholder="********">
+        <label for="password"><i class="fal fa-lock mr-2"></i>{{'Password'}}</label>
+      </div>
+
+      <div class="actions mt-3">
+        <button class="btn" [disabled]="AuthForm?.invalid" (click)="login()">
+          <span *ngIf="spin === true" class="mr-2"><i class="fas fa-spinner fa-spin"></i></span>
+          <small><b>{{'Login'}}</b></small>
+        </button>
+      </div>
+
+      <div class="sw-to_other">
+          <span>{{'Have not yet an account ? '}} <a (click)="switchTo()"><small>{{' Here'}}</small></a></span>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div *ngIf="_s === false" class="row">
+  <div class="col-md-9 mx-auto">
+
+    <form [formGroup]="RegForm">
+      <div class="h_p">
+        <img src="../../assets/img/AM3.png" alt="" srcset="">
+      </div>
+      <!-- <div class="social_reg">
+            <a >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a >
+              <i class="fab fa-google-plus"></i>
+            </a>
+      </div> -->
+
+    <div class="field">
+        <small class="dcolor" *ngIf="(name.statusChanges|async) === 'INVALID'">{{'Name is invalid'}}</small>
+        <small  class="vcolor" *ngIf="(name.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
+        <input type="text" id="name" formControlName="name" placeholder="Edward Koss" [ngClass]="{'bvcolor': (name.statusChanges|async) === 'VALID', 'bdcolor': (name.statusChanges|async) === 'INVALID'}">
+        <label for="name"><i class="far fa-user mr-2"></i>{{'Name'}}</label>
+      </div>
+      <div class="field">
+        <small class="dcolor" *ngIf="(email.statusChanges|async) === 'INVALID'">{{'Email is invalid'}}</small>
+        <small class="vcolor"  *ngIf="(email.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
+        <input type="text" id="email" formControlName="email" [ngClass]="{'bvcolor': (email.statusChanges|async) === 'VALID', 'bdcolor': (email.statusChanges|async) === 'INVALID'}" placeholder="Ek@example.com">
+        <label for="email"><i class="fal fa-envelope mr-2"></i>{{'Email'}}</label>
+      </div>
+      <div class="field">
+        <small class="dcolor" *ngIf="(password.statusChanges|async) === 'INVALID'">{{'Password is invalid'}}</small>
+        <small class="vcolor"  *ngIf="(password.statusChanges|async) === 'VALID'">{{'Valid Enter'}}</small>
+        <input type="password" id="password" formControlName="password" [ngClass]="{'bvcolor': (password.statusChanges|async) === 'VALID', 'bdcolor': (password.statusChanges|async) === 'INVALID'}" placeholder="********">
+        <label for="password"><i class="fal fa-lock mr-2"></i>{{'Password'}}</label>
+      </div>
+
+      <div class="actions mt-3">
+        <button class="btn" [disabled]="RegForm?.invalid" (click)="login()">
+          <span *ngIf="spin === true" class="mr-2"><i class="fas fa-spinner fa-spin"></i></span>
+          <small><b>{{'Register'}}</b></small>
+        </button>
+      </div>
+
+      <div class="sw-to_other">
+          <span>{{'Have an account ? '}} <a (click)="switchTo()"><small>{{' Here'}}</small></a></span>
+      </div>
+    </form>
+
+  </div>
+</div>

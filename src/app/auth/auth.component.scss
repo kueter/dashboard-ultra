@@ -1,0 +1,217 @@
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: .6em;
+  position: relative;
+}
+/**
+* Add a transition to the label and input.
+* I'm not even sure that touch-action: manipulation works on
+* inputs, but hey, it's new and cool and could remove the
+* pesky delay.
+*/
+label, input, textarea {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+input,textarea {
+  font-size: 1em;
+  border: 2px solid #4d4f52;
+  border-radius: .30rem;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: text;
+  padding: .375rem .75rem;
+}
+
+input:focus , textarea:focus{
+  outline: 0;
+}
+
+label {
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+  font-size: 10px;
+  color: #4d4f52;
+  font-weight: bold;
+}
+/**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* field—to make sure it scales properly and doesn't wrap.
+*/
+input:placeholder-shown + label , textarea:placeholder-shown + label{
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(.5rem, 2.4rem) scale(1.5);
+}
+/**
+* By default, the placeholder should be transparent. Also, it should
+* inherit the transition.
+*/
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+
+textarea::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+/**
+* Show the placeholder when the input is focused.
+*/
+input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+/**
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when
+* there's something in the input at all.
+*/
+input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label,
+textarea:focus + label,
+input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
+
+.actions {
+  width: 100%;
+  text-align: center!important;
+}
+
+.actions .btn {
+  background-color: #46957b;
+  color: #fff;
+  width: 50%;
+  cursor: pointer;
+}
+
+.actions .btn .fa-spinner {
+  color: #fff;
+}
+
+.actions .btn:focus {
+  box-shadow: none;
+}
+
+
+.ntoast {
+  position: absolute;
+  display: none;
+  bottom: -10%;
+  right: 5%;
+  overflow: hidden;
+  background-color: #008080;
+  color: #fff;
+  padding: .5rem;
+  box-shadow: 2px 1px 6px 3px rgba(0, 0, 0, .125);
+  border-radius: .35rem;
+  z-index: -30;
+}
+
+.vcolor {
+  color: #46957b;
+  position: absolute;
+  top: 2%;
+  right: 3%;
+}
+
+.dcolor {
+  color: brown;
+  position: absolute;
+  top: 2%;
+  right: 3%;
+}
+
+.bvcolor {
+  border-color: #46957b!important;
+}
+
+.bdcolor {
+    border-color:  brown!important;
+}
+
+
+
+
+.h__ {
+  width: 100%;
+  text-align: center;
+  span.ti {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4d4f52;
+  }
+
+  span.itd {
+    font-size: 12px;
+    font-weight: bold;
+    color: #4d4f52;
+  }
+}
+
+
+.h_p {
+  width: 100%;
+  text-align: center;
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: .5rem;
+    border: 3px solid #46957b;
+  }
+}
+
+
+.sw-to_other {
+  margin-top: 1rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  span {
+      font-size: 12px;
+      font-weight: bold;
+      color: #4d4f52;
+
+      a {
+        cursor: pointer;
+        color: #46957b;
+      }
+  }
+}
+
+
+.social_reg {
+  width: 100%;
+  display: flex;
+  padding-top: .4rem;
+  justify-content: space-between;
+  a {
+    width: 30%;
+    display: block;
+    text-align: center;
+
+    .fa-facebook {
+      color: #4267B2;
+    }
+
+    .fa-linkedin {
+      color: #3178B5;
+    }
+
+    .fa-google-plus {
+      color: #DB4437;
+    }
+  }
+}
+
