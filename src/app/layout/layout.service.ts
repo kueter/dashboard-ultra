@@ -155,8 +155,15 @@ export class LayoutService {
   }
 
 
-  // Chat 
+  // Chat
 
+  setMessage(item: any) {
+    this.messages.next(item);
+  }
+
+  getMessage() {
+    return this.messages.asObservable();
+  }
 
 
 
