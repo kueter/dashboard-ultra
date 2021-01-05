@@ -4,7 +4,7 @@
                 <div class="card-body bxs">
                     <div class="title">{{item?.title}}</div>
                     <div class="detail mt-2">
-                        <i [class]="item?.icon"></i>
+                        <i [class]="item?.icon" [style]="{'color': (lservice?.getbColor()|async)}"></i>
                         <span>{{item?.mount}}</span>
                     </div>
                 </div>
