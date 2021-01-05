@@ -13,10 +13,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // setTimeout(() => {
-    //   this.boot = true;
-    //   $(".cp_load").animate({ height: '0px' });
-    // }, 2500);
+    setTimeout(() => {
+      this.boot = true;
+      $(".cp_load").animate({ height: '0px' });
+    }, 2500);
 
   }
 }
