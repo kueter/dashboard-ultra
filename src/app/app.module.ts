@@ -11,6 +11,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthComponent } from './auth/auth.component';
+import { SharedModule } from './layout/elements/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AuthComponent } from './auth/auth.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
