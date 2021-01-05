@@ -9,10 +9,10 @@ import { LayoutService } from '../../layout.service';
 export class WidgetsUiComponent implements OnInit {
 
   cards = [
-    {title: '', detail: '', count: ''},
-    {title: '', detail: '', count: ''},
-    {title: '', detail: '', count: ''},
-    {title: '', detail: '', count: ''},
+    { icon:'' ,title: 'All Requests', detail: '', mount: ''},
+    { icon:'' ,title: 'Client Flux', detail: '', mount: ''},
+    { icon:'' ,title: 'Amount Bank', detail: '', mount: ''},
+    { icon:'' ,title: 'Employee', detail: '', mount: ''},
   ];
 
   constructor(public lservice: LayoutService) { }
