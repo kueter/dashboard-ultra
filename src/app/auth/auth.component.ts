@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { LayoutService } from '../layout/layout.service';
 
 @Component({
   selector: 'app-auth',
@@ -17,7 +18,7 @@ export class AuthComponent implements OnInit {
 
   _s = false;
 
-  constructor() { }
+  constructor(public lservice: LayoutService) { }
 
   ngOnInit(): void {
     this.initForm();
