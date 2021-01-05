@@ -3,16 +3,16 @@
     <div class="left">
         <div class="__menu">
               <div class="__item">
-               <a (click)="lservice?.setState()"> <i class="fal fa-bars"></i></a>
+               <a (click)="lservice?.setState()"> <i class="fal fa-bars" [style]="{'color':(lservice?.getbColor()|async)}"></i></a>
               </div>
               <div class="__item">
-                <a (click)="lservice?.osbox()"><i class="fas fa-fill-drip" data-toggle="tooltip" data-placement="bottom" title="colors"></i></a>
+                <a (click)="lservice?.osbox()"><i class="fad fa-fill-drip" [style]="{'color':(lservice?.getbColor()|async)}" title="colors"></i></a>
               </div>
               <div class="__item">
-                <a > <i class="fal fa-cogs" data-toggle="tooltip" data-placement="bottom" title="settings"></i></a>
+                <a > <i class="fal fa-cogs"  title="settings"></i></a>
               </div>
               <div class="__item">
-                <a > <i class="fal fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="helps"></i></a>
+                <a > <i class="fal fa-info-circle"  title="helps"></i></a>
               </div>
         </div>
     </div>
@@ -26,11 +26,11 @@
     <div class="right">
       <div class="__menu">
             <div class="__item">
-                <a (click)="lservice?.ocBox()"> <i class="fal fa-comments" data-toggle="tooltip" data-placement="bottom" title="chats"></i>
-                  <span class="badge">3</span></a>
+                <a (click)="lservice?.ocBox()"> <i class="fal fa-comments"  title="chats" [style]="{'color':(lservice?.getbColor()|async)}"></i>
+                  <span class="badge">2</span></a>
               </div>
               <div class="__item">
-                <a > <i class="fal fa-bell" data-toggle="tooltip" data-placement="bottom" title="notify"></i>
+                <a > <i class="fal fa-bell"  title="notify"></i>
                   <span class="badge">3</span></a>
               </div>
       </div>
@@ -39,7 +39,7 @@
           </div>
           <div class="__menu">
               <div class="__item">
-                  <a ><i class="fal fa-power-off" data-toggle="tooltip" data-placement="bottom" title="log out"></i></a>
+                  <a ><i class="fal fa-power-off"  title="log out"></i></a>
               </div>
           </div>
     </div>
