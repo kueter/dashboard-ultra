@@ -4,7 +4,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: 'dashboard/widgets', pathMatch:'full'},
+    { path: '', redirectTo: '/dashboard/widgets', pathMatch:'full'},
     { path: 'dashboard', component: LayoutComponent,
     children: [
       { path: 'widgets', loadChildren: () => import('./layout/elements/widgets-ui/widgets-ui.module').then(m => m.WidgetsUiModule), data:{ animation: 'widgets'} },
