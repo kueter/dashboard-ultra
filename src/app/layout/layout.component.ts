@@ -103,6 +103,4 @@ export class LayoutComponent implements OnInit  {
     this.state = event;
   }
 
-
-
 }
