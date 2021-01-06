@@ -31,3 +31,15 @@
     font-weight: 600;
   }
 }
+
+.item:not(:last-child) {
+  padding-bottom: .42857143em;
+}
+
+.item:not(:first-child) {
+  padding-top: .42857143em;
+}
+
+.item:last-child {
+  padding-bottom: 0%;
+}
