@@ -33,7 +33,7 @@
 }
 
 .item {
-  display: list-item;
+  display: flex;
   table-layout: fixed;
   list-style-type: none;
   list-style-position: outside;
@@ -48,6 +48,18 @@
   vertical-align: top;
   line-height: 1.14285714em;
   color: rgba(0, 0, 0, 0.87);
+
+  a.header {
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .description {
+    display: block;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+  }
+
 }
 
 .item:not(:last-child) {
@@ -73,7 +85,3 @@
   border-radius: 500rem;
 }
 
-.description {
-  display: block;
-  color: rgba(0, 0, 0, 0.7);
-}

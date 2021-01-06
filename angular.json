@@ -134,6 +134,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ultra"
+    }
+  },
+  "defaultProject": "ultra",
+  "cli": {
+    "analytics": "3e36cfa3-ebfb-4ade-9bd4-b539e4613a05"
+  }
 }
