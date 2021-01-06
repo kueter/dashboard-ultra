@@ -43,11 +43,11 @@
 
 .content {
   display: inline-block;
-    width: auto;
-    padding: 0 0 0 .5em;
-    vertical-align: top;
-    line-height: 1.14285714em;
-    color: rgba(0,0,0,.87);
+  width: auto;
+  padding: 0 0 0 0.5em;
+  vertical-align: top;
+  line-height: 1.14285714em;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .item:not(:last-child) {
@@ -71,4 +71,9 @@
   width: 2em;
   height: 2em;
   border-radius: 500rem;
+}
+
+.description {
+  display: block;
+  color: rgba(0, 0, 0, 0.7);
 }
