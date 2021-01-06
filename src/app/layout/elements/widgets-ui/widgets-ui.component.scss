@@ -43,3 +43,14 @@
 .item:last-child {
   padding-bottom: 0%;
 }
+
+.ui-avatar {
+  border-style: none;
+  display: inline-block;
+  background-color: transparent;
+  margin: 0;
+  vertical-align: top;
+  width: 2em;
+  height: 2em;
+  border-radius: 500rem;
+}
