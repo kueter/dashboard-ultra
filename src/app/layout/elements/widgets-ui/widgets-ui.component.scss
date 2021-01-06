@@ -41,6 +41,15 @@
   line-height: 1.14285714em;
 }
 
+.content {
+  display: inline-block;
+    width: auto;
+    padding: 0 0 0 .5em;
+    vertical-align: top;
+    line-height: 1.14285714em;
+    color: rgba(0,0,0,.87);
+}
+
 .item:not(:last-child) {
   padding-bottom: 0.42857143em;
 }
