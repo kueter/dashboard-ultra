@@ -16,7 +16,12 @@ export class WidgetsUiComponent implements OnInit {
   ];
 
   lists = [
-
+    { avatar: '../../../../assets/img/christian.jpg', name: 'Chris', description: 'Last seen watching Arrested Development just now.'},
+    { avatar: '../../../../assets/img/daniel.jpg', name: 'Dany', description: 'Last seen watching Arrested Development just now.'},
+    { avatar: '../../../../assets/img/elliot.jpg', name: 'Elliot', description: 'Last seen watching Arrested Development just now.'},
+    { avatar: '../../../../assets/img/jenny.jpg', name: 'Jenny', description: 'Last seen watching Arrested Development just now.'},
+    { avatar: '../../../../assets/img/mark.png', name: 'Mark', description: 'Last seen watching Arrested Development just now.'},
+    { avatar: '../../../../assets/img/molly.png', name: 'Molly', description: 'Last seen watching Arrested Development just now.'},
   ];
 
   constructor(public lservice: LayoutService) { }
