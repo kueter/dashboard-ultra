@@ -20,10 +20,10 @@
         <div class="row">
             <div class="col-md-12" *ngFor="let item of lists">
                 <div class="item">
-                    <img class="ui-avatar" src="" alt="">
+                    <img class="ui-avatar" [src]="item?.avatar" alt="">
                     <div class="content">
-                        <a class="header"></a>
-                        <div class="description"></div>
+                        <a class="header">{{item?.name}}</a>
+                        <div class="description">{{item?.description}}</div>
                     </div>
                 </div>
             </div>
