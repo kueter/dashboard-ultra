@@ -17,15 +17,19 @@
 
 <div class="row">
     <div class="col-md-4">
-        <div class="row">
-            <div class="col-md-12" *ngFor="let item of lists">
-                <div class="item">
-                    <img class="ui-avatar" [src]="item?.avatar" alt="">
-                    <div class="content">
-                        <a class="header">{{item?.name}}</a>
-                        <div class="description">{{item?.description}}</div>
+        <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12" *ngFor="let item of lists">
+                    <div class="item">
+                        <img class="ui-avatar" [src]="item?.avatar" alt="">
+                        <div class="content">
+                            <a class="header">{{item?.name}}</a>
+                            <div class="description">{{item?.description}}</div>
+                        </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
