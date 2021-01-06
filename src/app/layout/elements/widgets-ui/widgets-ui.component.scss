@@ -1,5 +1,5 @@
 .bxs {
-  box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
 }
 
 .nborder {
@@ -32,12 +32,21 @@
   }
 }
 
+.item {
+  display: list-item;
+  table-layout: fixed;
+  list-style-type: none;
+  list-style-position: outside;
+  padding: 0.21428571em 0;
+  line-height: 1.14285714em;
+}
+
 .item:not(:last-child) {
-  padding-bottom: .42857143em;
+  padding-bottom: 0.42857143em;
 }
 
 .item:not(:first-child) {
-  padding-top: .42857143em;
+  padding-top: 0.42857143em;
 }
 
 .item:last-child {
