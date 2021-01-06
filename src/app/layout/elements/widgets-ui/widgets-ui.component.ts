@@ -15,6 +15,8 @@ export class WidgetsUiComponent implements OnInit {
     { icon: 'fad fa-people-carry fa-2x' ,title: 'Employee', detail: 'Everybody feel good', mount: '0.5k'},
   ];
 
+  lists = [];
+
   constructor(public lservice: LayoutService) { }
 
   ngOnInit(): void {
