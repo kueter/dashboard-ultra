@@ -34,29 +34,32 @@
         </div>
     </div>
     <div class="col-md-8">
-        <div class="row conty" [@itemType]="discussions?.length" >
-              <div class="col-md-12" *ngFor="let item of discussions">
-                    <div class="discussion-box mt-2">
-                         <img class="ui-avatar" [src]="item?.avatar">
-                          <div class="card">
-                              <div class="card-header p-2">
-                                  <div class="title">
-                                      <span [style]="{'color': (lservice?.getbColor()|async)}">{{item?.who}}</span>
-                                      <small>{{'commented on'}}</small>
-                                      <small>{{item?.date}}</small>
-                                  </div>
-                                  <div class="actions">
-                                      <button><i class="fal fa-smile"></i></button>
-                                      <button><i class="fal fa-ellipsis-h"></i></button>
-                                  </div>
-                              </div>
-                              <div class="card-body p-2">
-                                    <span class="comment-u">{{item?.comment}}</span>
-                              </div>
-                          </div>
-                    </div>
-              </div>
+        <div class="conty">
+          <div class="row" [@itemType]="discussions?.length" >
+            <div class="col-md-12" *ngFor="let item of discussions">
+                  <div class="discussion-box mt-2">
+                       <img class="ui-avatar" [src]="item?.avatar">
+                        <div class="card">
+                            <div class="card-header p-2">
+                                <div class="title">
+                                    <span [style]="{'color': (lservice?.getbColor()|async)}">{{item?.who}}</span>
+                                    <small>{{'commented on'}}</small>
+                                    <small>{{item?.date}}</small>
+                                </div>
+                                <div class="actions">
+                                    <button><i class="fal fa-smile"></i></button>
+                                    <button><i class="fal fa-ellipsis-h"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body p-2">
+                                  <span class="comment-u">{{item?.comment}}</span>
+                            </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
         </div>
+
 
         <div class="row">
           <div class="col-md-12">

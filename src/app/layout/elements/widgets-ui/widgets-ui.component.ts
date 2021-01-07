@@ -74,7 +74,7 @@ export class WidgetsUiComponent implements OnInit {
 
   pushComment() {
       const form = this.commentForm.value;
-
+      console.log($('.conty')[0].scrollHeight + 93);
       const comment = {
         avatar: '../../../../assets/img/AM3.png',
         who: 'You',
@@ -82,12 +82,12 @@ export class WidgetsUiComponent implements OnInit {
         date: 'Aug 21, 2020'
       };
 
-      $('.conty').animate({
-        scrollTop: $('.conty')[0].scrollHeight - $('.conty')[0].clientHeight
-      }, 1000, ()=> {
-        this.discussions.push(comment);
-      });
+      $('.conty').scrollTop(
+        0
+      );
 
+
+      this.discussions.push(comment);
   }
 
 }
