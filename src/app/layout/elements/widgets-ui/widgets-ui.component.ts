@@ -1,5 +1,6 @@
 import { trigger, transition, query, style, stagger, animate, keyframes } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LayoutService } from '../../layout.service';
 
 @Component({
@@ -59,7 +60,26 @@ export class WidgetsUiComponent implements OnInit {
 
   constructor(public lservice: LayoutService) { }
 
+  commentForm: FormGroup;
+
   ngOnInit(): void {
+
+    this.commentForm = new FormGroup({
+      comment: new FormControl('', [Validators.required, Validators.minLength(3)])
+    });
+  }
+
+
+  pushComment() {
+      const form = this.commentForm.value;
+
+      const comment = {
+        avatar: '../../../../assets/img/AM3.png',
+        who: 'You',
+        comment: form.comment,
+        date: 'Aug 21, 2020'
+      };
+      this.discussions.push(comment);
   }
 
 }
