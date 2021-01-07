@@ -89,21 +89,46 @@
   width: 100%;
   display: flex;
   .card {
-    width: 100%;
+    width: 80%;
+    margin-left: 20px;
   }
 
   .card::before {
-    content: " ";
+    position: absolute;
+    top: 11px;
+    right: 100%;
+    left: -16px;
+    display: block;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    content: "‹";
+    border-color: transparent;
+    border-style: solid solid outset;
+  }
+
+  .card::after {
+    position: absolute;
+    top: 11px;
+    right: 100%;
+    left: -16px;
+    display: block;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    content: "‹";
+    border-color: transparent;
+    border-style: solid solid outset;
   }
 }
 
 .discussion-box::before {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  top: 50%;
+  bottom: -50%;
+  left: 10%;
   display: block;
-  width: 2px;
+  width: 1px;
   content: "";
-  background-color: #a9aaac;
+  background-color: rgba(0, 0, 0, 0.125);
 }
