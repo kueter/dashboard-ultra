@@ -39,19 +39,19 @@
                     <div class="discussion-box">
                          <img class="ui-avatar" [src]="item?.avatar">
                           <div class="card">
-                              <div class="card-header p-1">
+                              <div class="card-header p-2">
                                   <div class="title">
-                                      <span>{{item?.who}}</span>
-                                      <span>{{'commented on'}}</span>
-                                      <span>{{item?.date}}</span>
+                                      <span [style]="{'color': (lservice?.getbColor()|async)}">{{item?.who}}</span>
+                                      <small>{{'commented on'}}</small>
+                                      <small>{{item?.date}}</small>
                                   </div>
                                   <div class="actions">
                                       <button><i class="fal fa-smile"></i></button>
                                       <button><i class="fal fa-ellipsis-h"></i></button>
                                   </div>
                               </div>
-                              <div class="card-body">
-
+                              <div class="card-body p-2">
+                                    <span class="comment-u">{{item?.comment}}</span>
                               </div>
                           </div>
                     </div>
