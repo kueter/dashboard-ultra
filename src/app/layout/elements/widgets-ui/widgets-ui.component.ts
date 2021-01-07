@@ -67,7 +67,7 @@ export class WidgetsUiComponent implements OnInit {
   ngOnInit(): void {
 
     this.commentForm = new FormGroup({
-      comment: new FormControl('', [Validators.required, Validators.minLength(3)])
+      comment: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(150)])
     });
   }
 
@@ -82,12 +82,7 @@ export class WidgetsUiComponent implements OnInit {
         date: 'Aug 21, 2020'
       };
 
-      $('.conty').scrollTop(
-        0
-      );
-
-
-      this.discussions.push(comment);
+      this.discussions.unshift(comment);
   }
 
 }
