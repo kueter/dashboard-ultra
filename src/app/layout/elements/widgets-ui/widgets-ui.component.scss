@@ -94,18 +94,22 @@
     margin-left: 20px;
   }
 
-  .card::before {
+  .card::before,
+  .card::after {
     position: absolute;
-    top: 0px;
-    right: 100%;
-    left: -5px;
     display: block;
-    pointer-events: none;
-    content: "<";
-    color: rgba(0, 0, 0, 0.125);
-    border-color: transparent;
-    background-color: rgba(0, 0, 0, 0.125);
-    z-index: 1;
+    content: "";
+    transform: rotate(90deg);
+    border: 5px solid transparent; /*adjust size*/
+  }
+
+  .card::before {
+    top:0;
+    border-top-color:#b00;
+  }
+  .card::after {
+    left: 1%;
+    border-top-color:rgb(44, 40, 40); /*Match background colour*/
   }
 }
 
