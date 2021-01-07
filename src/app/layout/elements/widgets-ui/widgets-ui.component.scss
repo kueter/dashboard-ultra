@@ -45,6 +45,10 @@
   list-style-position: outside;
   padding: 0.21428571em 0;
   line-height: 1.14285714em;
+
+  img {
+    border: 3px solid rgba(0, 0, 0, 0.3);
+  }
 }
 
 .p-item:not(:last-child) > .item::before {
@@ -55,7 +59,7 @@
   bottom: -20%;
   left: 5%;
   display: block;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .content {
