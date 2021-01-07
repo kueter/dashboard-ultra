@@ -172,6 +172,12 @@
                     display: flex;
                     flex-wrap: wrap!important;
                 }
+
+                button {
+                  background-color: transparent;
+                  border: none;
+                  outline: none;
+                }
               }
               .drop::before {
                 position: absolute;
