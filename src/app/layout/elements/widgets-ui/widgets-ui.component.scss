@@ -121,7 +121,32 @@
         border: 1px solid var(--color-border-tertiary);
         border-radius: 6px;
         border-color: var(--color-border-primary);
-      }
+
+        &_header {
+          display: flex;
+          align-items: center;
+          padding-right: 16px;
+          padding-left: 16px;
+          color: var(--color-text-secondary);
+          flex-direction: row-reverse;
+          background-color: var(--color-bg-tertiary);
+          border-bottom: 1px solid var(--color-border-tertiary);
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+        }
+
+        &_body {
+          width: 100%;
+          padding: 15px;
+          overflow: visible;
+          font-size: 14px;
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+       }
 
       .comment-d:before {
         position: absolute;
@@ -135,9 +160,10 @@
         content: " ";
         border-color: transparent;
         border-style: solid solid outset;
-    }
+      }
 
     }
+
   }
 
   &_tline::before {
