@@ -47,10 +47,15 @@
   line-height: 1.14285714em;
 }
 
-.item::before {
+.p-tiem > .item:not(:last-child):before {
   position: absolute;
   content: '';
   width: 3px;
+  top: 50%;
+  bottom: -30%;
+  left: 10%;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
 
 }
 
