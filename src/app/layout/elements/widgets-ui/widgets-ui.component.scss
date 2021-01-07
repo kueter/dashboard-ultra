@@ -98,6 +98,7 @@
       justify-content: space-between;
       align-items: center;
       .nav-link {
+        color: #969292;
         padding: .1rem 1rem!important;
       }
 
@@ -132,6 +133,29 @@
         text-justify: inter-word;
         color: rgba(0, 0, 0, 0.5);
         font-size: 12px;
+      }
+
+      .form {
+          textarea {
+            width: 100%;
+            outline: none;
+            border: none;
+            color: #969292;
+            line-height: 1;
+            font-size: 12px;
+          }
+
+          textarea::placeholder {
+            font-size: 12px;
+          }
+
+          button {
+            float: right;
+            border: none;
+            outline: none;
+            color: #fff;
+            border-radius: .25rem;
+          }
       }
     }
   }
