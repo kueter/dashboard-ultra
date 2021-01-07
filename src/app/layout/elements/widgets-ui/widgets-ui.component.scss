@@ -133,6 +133,53 @@
           border-bottom: 1px solid var(--color-border-tertiary);
           border-top-left-radius: 6px;
           border-top-right-radius: 6px;
+
+          .actions {
+            float: right;
+            margin-left: 8px;
+
+            details {
+              .drop {
+                margin-top: -4px !important;
+                margin-right: -4px !important;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 100;
+                width: 160px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                margin-top: 2px;
+                list-style: none;
+                background-color: var(--color-bg-overlay);
+                background-clip: padding-box;
+                border: 1px solid var(--color-border-overlay);
+                border-radius: 6px;
+                box-shadow: var(--color-dropdown-shadow);
+
+                &_h{
+                  font-size: 11px;
+                }
+
+                &_divider {
+                  display: block;
+                  height: 0;
+                  margin: 8px 0;
+                  border-top: 1px solid var(--color-border-overlay);
+                }
+
+                &_b {
+                    display: flex;
+                    flex-wrap: wrap!important;
+                }
+              }
+              .drop::before {
+                position: absolute;
+                display: inline-block;
+                content: "";
+              }
+            }
+          }
         }
 
         &_body {
@@ -145,8 +192,7 @@
             font-size: 14px;
           }
         }
-
-       }
+      }
 
       .comment-d:before {
         position: absolute;
@@ -161,9 +207,7 @@
         border-color: transparent;
         border-style: solid solid outset;
       }
-
     }
-
   }
 
   &_tline::before {
