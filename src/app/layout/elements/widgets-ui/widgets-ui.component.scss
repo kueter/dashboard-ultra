@@ -92,6 +92,9 @@
   .card {
     width: 80%;
     margin-left: 20px;
+    .card-header {
+      background-color: #fff!important;
+    }
   }
 
   .card::before,
@@ -99,17 +102,18 @@
     position: absolute;
     display: block;
     content: "";
+    top:10%;
     transform: rotate(90deg);
     border: 5px solid transparent; /*adjust size*/
   }
 
   .card::before {
-    top:0;
-    border-top-color:#b00;
+    border-top-color:rgba(0, 0, 0, 0.125);
+    left: -11px;
   }
   .card::after {
-    left: 1%;
-    border-top-color:rgb(44, 40, 40); /*Match background colour*/
+    left: -9px;
+    border-top-color:#fff; /*Match background colour*/
   }
 }
 
