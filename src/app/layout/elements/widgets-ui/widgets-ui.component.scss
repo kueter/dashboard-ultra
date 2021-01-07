@@ -2,6 +2,11 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
 }
 
+.hc {
+  height: 305px;
+  width: 327px;
+}
+
 .nborder {
   border: 0px !important;
 }
@@ -33,12 +38,20 @@
 }
 
 .item {
+  position: relative;
   display: flex;
   table-layout: fixed;
   list-style-type: none;
   list-style-position: outside;
   padding: 0.21428571em 0;
   line-height: 1.14285714em;
+}
+
+.item::before {
+  position: absolute;
+  content: '';
+  width: 3px;
+
 }
 
 .content {
