@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="col-md-8">
-        <div class="row">
+        <div class="row" [@itemType]="discussions?.length">
               <div class="col-md-12" *ngFor="let item of discussions">
                     <div class="discussion-box mt-2">
                          <img class="ui-avatar" [src]="item?.avatar">
