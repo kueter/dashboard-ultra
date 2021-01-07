@@ -50,7 +50,6 @@ export class WidgetsUiComponent implements OnInit {
     { avatar: '../../../../assets/img/elliot.jpg', name: 'Elliot', description: 'Last seen watching Arrested Development just now.'},
     { avatar: '../../../../assets/img/jenny.jpg', name: 'Jenny', description: 'Last seen watching Arrested Development just now.'},
     { avatar: '../../../../assets/img/mark.png', name: 'Mark', description: 'Last seen watching Arrested Development just now.'},
-    { avatar: '../../../../assets/img/molly.png', name: 'Molly', description: 'Last seen watching Arrested Development just now.'},
   ];
 
   emojis = ['&#128512','&#128513', '&#128076','&#128078','&#128079','&#128070','&#9994','&#9997','&#128071'];
