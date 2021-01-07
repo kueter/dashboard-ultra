@@ -88,6 +88,7 @@
   position: relative;
   width: 100%;
   display: flex;
+
   .card {
     width: 80%;
     margin-left: 20px;
@@ -95,30 +96,18 @@
 
   .card::before {
     position: absolute;
-    top: 11px;
+    top: 0px;
     right: 100%;
-    left: -16px;
+    left: -5px;
     display: block;
     width: 0;
     height: 0;
     pointer-events: none;
-    content: "‹";
+    content: "<";
+    color: rgba(0, 0, 0, 0.125);
     border-color: transparent;
-    border-style: solid solid outset;
-  }
-
-  .card::after {
-    position: absolute;
-    top: 11px;
-    right: 100%;
-    left: -16px;
-    display: block;
-    width: 0;
-    height: 0;
-    pointer-events: none;
-    content: "‹";
-    border-color: transparent;
-    border-style: solid solid outset;
+    background-color: rgba(0, 0, 0, 0.125);
+    z-index: 1;
   }
 }
 
