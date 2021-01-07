@@ -93,7 +93,29 @@
     width: 80%;
     margin-left: 20px;
     .card-header {
+      display: flex;
       background-color: #fff!important;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        span:first-child {
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        button {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          i {
+            color: rgba(0, 0, 0, 0.125);
+          }
+        }
+      }
     }
   }
 
