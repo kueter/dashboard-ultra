@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LayoutService } from '../../layout.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-widgets-ui',
   templateUrl: './widgets-ui.component.html',
@@ -79,7 +81,13 @@ export class WidgetsUiComponent implements OnInit {
         comment: form.comment,
         date: 'Aug 21, 2020'
       };
-      this.discussions.push(comment);
+
+      $('.conty').animate({
+        scrollTop: $('.conty')[0].scrollHeight - $('.conty')[0].clientHeight
+      }, 1000, ()=> {
+        this.discussions.push(comment);
+      });
+
   }
 
 }
