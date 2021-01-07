@@ -77,7 +77,7 @@
                                     <div class="form">
                                           <form >
                                               <textarea name="" id="" cols="57" rows="2" placeholder="Put your comment here"></textarea>
-                                              <button [style]="{'background-color': (lservice?.getbColor()|async)}"> <small>{{'comment'}}</small></button>
+                                              <button [style]="{'background-color': (lservice?.getbColor()|async)}" (click)="pushComment()" [disabled]="commentForm?.invalid"> <small>{{'comment'}}</small></button>
                                             </form>
                                     </div>
                               </div>
