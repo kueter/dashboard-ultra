@@ -26,6 +26,10 @@ export class WidgetsUiComponent implements OnInit {
 
   emojis = ['&#128512','&#128513', '&#128076','&#128078','&#128079','&#128070','&#9994','&#9997','&#128071'];
 
+  discussions = [
+      { avatar: '../../../../assets/img/christian.jpg', who: 'Christian', comment: 'Hi amazing work, I just wanted to know if it\'s possible to use this code with named routes in flutter?', date: 'Aug 21, 2020'}
+  ];
+
   constructor(public lservice: LayoutService) { }
 
   ngOnInit(): void {

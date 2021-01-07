@@ -134,6 +134,14 @@
           border-top-left-radius: 6px;
           border-top-right-radius: 6px;
 
+          .title {
+            min-width: 0;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-bottom: 1px;
+            flex: 1 1 auto;
+          }
+
           .actions {
             float: right;
             margin-left: 8px;
@@ -157,7 +165,7 @@
                 border-radius: 6px;
                 box-shadow: var(--color-dropdown-shadow);
 
-                &_h{
+                &_h {
                   font-size: 11px;
                 }
 
@@ -169,8 +177,8 @@
                 }
 
                 &_b {
-                    display: flex;
-                    flex-wrap: wrap!important;
+                  display: flex;
+                  flex-wrap: wrap !important;
                 }
 
                 button {

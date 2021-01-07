@@ -37,15 +37,20 @@
         <div class="card nborder">
             <div class="card-body p-2 bxs">
                 <div class="row">
-                    <div class="flex-shrink-0 col-md-12 mb-md-0 ">
+                    <div class="flex-shrink-0 col-md-12 mb-md-0">
                             <div class="discussion-box ml-0 pl-0 ml-md-6 pl-md-3">
-                                    <div class="discussion-box_tline">
+                                    <div class="discussion-box_tline" *ngFor="let item of discussions">
                                           <div class="avatar_box_d">
-                                              <img src="" alt="">
+                                              <img [src]="item?.avatar" alt="">
                                           </div>
                                           <div class="content-body">
                                                 <div class="comment-d">
                                                   <div class="comment-d_header">
+                                                      <div class="title">
+                                                          <strong>{{item?.who}}</strong>
+                                                          <span>{{'commented'}}</span>
+                                                          <span class="date">{{item?.date}}</span>
+                                                      </div>
                                                         <div class="actions">
                                                               <details>
                                                                   <summary>
@@ -71,7 +76,7 @@
                                                   </div>
                                                   <div class="comment-d_body">
                                                       <span>
-                                                        {{'Hi amazing work, I just wanted to know if it\'s possible to use this code with named routes?'}}
+                                                        {{item?.comment}}
                                                       </span>
                                                   </div>
                                                 </div>
