@@ -53,8 +53,10 @@
                                                                   </summary>
                                                                   <div class="drop">
                                                                       <div class="drop_h">{{'Pick your reaction'}}</div>
-                                                                      <div class="divider"></div>
-                                                                      <div class="drop_b m-1"></div>
+                                                                      <div class="drop_divider"></div>
+                                                                      <div class="drop_b m-1">
+                                                                          <span *ngFor="let e of emojis"></span>
+                                                                      </div>
                                                                   </div>
                                                               </details>
                                                               <details></details>

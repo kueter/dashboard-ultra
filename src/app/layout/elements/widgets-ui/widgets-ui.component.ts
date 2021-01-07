@@ -24,6 +24,8 @@ export class WidgetsUiComponent implements OnInit {
     { avatar: '../../../../assets/img/molly.png', name: 'Molly', description: 'Last seen watching Arrested Development just now.'},
   ];
 
+  emojis = ['&#128512','&#128513', '&#128076','&#128078','&#128079','&#128070','&#9994','&#9997','&#128071'];
+
   constructor(public lservice: LayoutService) { }
 
   ngOnInit(): void {
