@@ -34,58 +34,10 @@
         </div>
     </div>
     <div class="col-md-8">
-        <div class="card nborder">
-            <div class="card-body p-2 bxs">
-                <div class="row">
-                    <div class="flex-shrink-0 col-md-12 mb-md-0">
-                            <div class="discussion-box ml-0 pl-0 ml-md-6 pl-md-3">
-                                    <div class="discussion-box_tline" *ngFor="let item of discussions">
-                                          <div class="avatar_box_d">
-                                              <img [src]="item?.avatar" alt="">
-                                          </div>
-                                          <div class="content-body">
-                                                <div class="comment-d">
-                                                  <div class="comment-d_header">
-                                                      <div class="title">
-                                                          <strong>{{item?.who}}</strong>
-                                                          <span>{{'commented'}}</span>
-                                                          <span class="date">{{item?.date}}</span>
-                                                      </div>
-                                                        <div class="actions">
-                                                              <details>
-                                                                  <summary>
-                                                                      <i class="far fa-smile"></i>
-                                                                  </summary>
-                                                                  <div class="drop">
-                                                                      <div class="drop_h">{{'Pick your reaction'}}</div>
-                                                                      <div class="drop_divider"></div>
-                                                                      <div class="drop_b m-1">
-                                                                          <span *ngFor="let e of emojis">{{e}}</span>
-                                                                      </div>
-                                                                  </div>
-                                                              </details>
-                                                              <details>
-                                                                <summary><i class="far fa-ellipsis-h"></i></summary>
-                                                                <div class="drop">
-                                                                    <button>{{'copy link'}}</button>
-
-                                                                    <button class="mt-2">{{'reply'}}</button>
-                                                                </div>
-                                                              </details>
-                                                        </div>
-                                                  </div>
-                                                  <div class="comment-d_body">
-                                                      <span>
-                                                        {{item?.comment}}
-                                                      </span>
-                                                  </div>
-                                                </div>
-                                          </div>
-                                    </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
+        <div class="row">
+              <div class="col-md-12">
+                    <div ></div>
+              </div>
         </div>
     </div>
 </div>
