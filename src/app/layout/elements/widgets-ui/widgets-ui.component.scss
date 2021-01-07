@@ -84,7 +84,7 @@
   border-radius: 500rem;
 }
 
-.discussion-box {
+.discussion-box, .discussion-form {
   position: relative;
   width: 100%;
   display: flex;
@@ -97,6 +97,10 @@
       background-color: #fff!important;
       justify-content: space-between;
       align-items: center;
+      .nav-link {
+        padding: .1rem 1rem!important;
+      }
+
       .title {
         width: 47%;
         display: flex;
@@ -162,3 +166,4 @@
   content: "";
   background-color: rgba(0, 0, 0, 0.125);
 }
+
