@@ -37,7 +37,7 @@ export class LayoutService {
 
 
   constructor(private storage: StorageMap, private router: Router) {
-    this.init();
+    // this.init();
   }
 
   setState() {
