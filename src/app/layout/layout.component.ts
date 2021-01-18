@@ -88,14 +88,16 @@ export class LayoutComponent implements OnInit  {
   colors: any;
   state = false;
   mForm: FormGroup;
+  sibState: boolean;
 
 
   @ViewChild('perfectScroll') perfectScroll: PerfectScrollbarComponent;
 
   constructor(public lservice: LayoutService) {
 
-
-    this.lservice.layoutState.next(JSON.parse(localStorage.getItem('state')));
+    this.sibState = JSON.parse(localStorage.getItem('state'));
+    console.log(this.sibState);
+    // this.lservice.layoutState.next(this.sibState);
 
     // localStorage.setItem('state', 'true');
     // localStorage.setItem('bgcolor', '#46957B');
@@ -107,6 +109,9 @@ export class LayoutComponent implements OnInit  {
       message: new FormControl('', Validators.required)
     });
   }
+
+
+
 
   // routes prepare and map with animation trigger
   preparedRoute(outlet: RouterOutlet) {

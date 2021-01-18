@@ -11,7 +11,6 @@ declare var $: any;
 })
 export class LayoutService {
 
-  state: any;
 
   layoutState = new Subject<any>();
   bgColor = new Subject<string>();
@@ -38,11 +37,7 @@ export class LayoutService {
     // this.init();
   }
 
-  setState() {
-    this.state = !this.state;
-    this.layoutState.next(this.state);
-    this.storage.set('state',this.state).subscribe(_=> console.log(_));
-  }
+
 
   setColor(item: string) {
       this.bgColor.next(item);
@@ -79,7 +74,6 @@ export class LayoutService {
 
     this.storage.get('bgcolor').subscribe((_:string) => {
       if(typeof _ == 'undefined') {
-        this.state = true;
         this.storage.set('bgcolor', '#46957B').subscribe();
         this.bgColor = new BehaviorSubject<string>('#46957B');
       }
