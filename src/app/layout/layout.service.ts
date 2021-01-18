@@ -68,7 +68,6 @@ export class LayoutService {
 
 
     this.storage.get('state').subscribe((_:any) => {
-      console.log(_);
         if(typeof _ == 'undefined') {
           this.storage.set('state', false).subscribe();
           this.layoutState = new BehaviorSubject<any>(false);
@@ -79,11 +78,9 @@ export class LayoutService {
     });
 
     this.storage.get('bgcolor').subscribe((_:string) => {
-      console.log(_);
       if(typeof _ == 'undefined') {
         this.storage.set('bgcolor', '#46957B').subscribe();
         this.bgColor = new BehaviorSubject<string>('#46957B');
-        console.log('color: '+ _);
       }
 
       this.bgColor.next(_);
@@ -95,7 +92,6 @@ export class LayoutService {
         const colors = ['#3171b7','#46957B', '#EB4034','#363534', '#FC9228', '#FC6128', '#820972'];
         this.storage.set('colors', colors).subscribe();
         this.colors = colors;
-        console.log('colors: '+ _);
       }
 
       this.colors = _;
