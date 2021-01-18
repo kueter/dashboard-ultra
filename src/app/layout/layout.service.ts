@@ -13,8 +13,10 @@ export class LayoutService {
 
   state: boolean;
 
-  layoutState = new BehaviorSubject<boolean>(true);
-  bgColor = new  BehaviorSubject<string>('#46957B');
+  layoutState: BehaviorSubject<boolean>;
+  bgColor: BehaviorSubject<string>;
+  // layoutState = new BehaviorSubject<boolean>(true);
+  // bgColor = new  BehaviorSubject<string>('#46957B');
   colors = [];
 
   bread = new BehaviorSubject<any>({path: 'Widgets', icon: 'fa-cube'});
@@ -69,8 +71,7 @@ export class LayoutService {
       console.log(_);
         if(typeof _ == 'undefined') {
           this.storage.set('state', false).subscribe();
-          this.layoutState.next(false);
-          console.log('state: '+ _);
+          this.layoutState = new BehaviorSubject<boolean>(false);
         }
 
         this.layoutState.next(_);
@@ -81,7 +82,7 @@ export class LayoutService {
       console.log(_);
       if(typeof _ == 'undefined') {
         this.storage.set('bgcolor', '#46957B').subscribe();
-        this.bgColor.next('#46957B');
+        this.bgColor = new BehaviorSubject<string>('#46957B');
         console.log('color: '+ _);
       }
 
