@@ -131,6 +131,7 @@ export class LayoutComponent implements OnInit  {
 
   setColor(color: string) {
     this.lservice.bgColor.next(color);
+    localStorage.setItem('theme', color);
   }
 
 
