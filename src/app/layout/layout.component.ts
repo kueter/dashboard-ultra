@@ -93,6 +93,10 @@ export class LayoutComponent implements OnInit  {
   @ViewChild('perfectScroll') perfectScroll: PerfectScrollbarComponent;
 
   constructor(public lservice: LayoutService) {
+
+
+    this.lservice.layoutState.next(JSON.parse(localStorage.getItem('state')));
+
     // localStorage.setItem('state', 'true');
     // localStorage.setItem('bgcolor', '#46957B');
   }

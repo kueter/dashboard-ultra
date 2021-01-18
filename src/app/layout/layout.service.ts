@@ -13,10 +13,8 @@ export class LayoutService {
 
   state: any;
 
-
-
-  layoutState = new BehaviorSubject<any>(null);
-  bgColor = new BehaviorSubject<string>(null);
+  layoutState = new Subject<any>();
+  bgColor = new Subject<string>();
   // layoutState = new BehaviorSubject<boolean>(true);
   // bgColor = new  BehaviorSubject<string>('#46957B');
   colors = [];
