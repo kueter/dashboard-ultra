@@ -12,10 +12,10 @@ declare var $: any;
 export class LayoutService {
 
 
-  layoutState = new Subject<any>();
-  bgColor = new Subject<string>();
-  // layoutState = new BehaviorSubject<boolean>(true);
-  // bgColor = new  BehaviorSubject<string>('#46957B');
+  // layoutState = new Subject<any>();
+  // bgColor = new Subject<string>();
+  layoutState = new BehaviorSubject<boolean>(null);
+  bgColor = new  BehaviorSubject<string>('#46957B');
   colors = [];
 
   bread = new BehaviorSubject<any>({path: 'Widgets', icon: 'fa-cube'});
@@ -44,6 +44,10 @@ export class LayoutService {
       this.storage.set('bgcolor',item).subscribe(_=> console.log(_));
   }
 
+
+  getState() {
+    return this.layoutState.asObservable();
+  }
 
   getbColor() {
     return this.bgColor.asObservable();

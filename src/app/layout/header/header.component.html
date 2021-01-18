@@ -1,5 +1,5 @@
 <div class="header-bar">
-  <div class="__normal_size" [ngStyle]="(lservice.layoutState| async) == true ? {'padding-left': '80px', 'transition':'all .2s ease-in-out'} : {'padding-left': '280px','transition':'all .2s ease-in-out'}">
+  <div class="__normal_size" [ngStyle]="(lservice.getState() | async) == true ? {'padding-left': '80px', 'transition':'all .2s ease-in-out'} : {'padding-left': '280px','transition':'all .2s ease-in-out'}">
     <div class="left">
         <div class="__menu">
               <div class="__item">
