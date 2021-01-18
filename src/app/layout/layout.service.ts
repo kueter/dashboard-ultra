@@ -45,10 +45,6 @@ export class LayoutService {
   }
 
 
-  getState() {
-    return this.layoutState.asObservable();
-  }
-
   getbColor() {
     return this.bgColor.asObservable();
   }

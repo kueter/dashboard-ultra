@@ -22,8 +22,9 @@ export class HeaderComponent implements OnInit {
 
   setState() {
     this.sibState = !this.sibState;
-    this.lservice.layoutState.next(this.sibState);
+    console.log(this.sibState);
     localStorage.setItem('state',JSON.stringify(this.sibState));
+    this.lservice.layoutState.next(this.sibState);
   }
 
   auth() {

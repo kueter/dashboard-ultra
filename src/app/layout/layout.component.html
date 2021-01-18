@@ -4,7 +4,7 @@
 
 <!-- Main outlet -->
 
-<div class="__main_outlet" [ngStyle]="(lservice?.getState()|async ) ? {'padding-left': '80px'}: {'':''}">
+<div class="__main_outlet" [ngStyle]="(lservice?.layoutState |async ) ? {'padding-left': '80px'}: {'':''}">
   <div class="inner__o">
 
     <!-- breadcrumb -->
