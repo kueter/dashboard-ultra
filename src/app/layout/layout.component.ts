@@ -96,8 +96,7 @@ export class LayoutComponent implements OnInit  {
   constructor(public lservice: LayoutService) {
 
     this.sibState = JSON.parse(localStorage.getItem('state'));
-    console.log(this.sibState);
-    // this.lservice.layoutState.next(this.sibState);
+    this.lservice.layoutState.next(this.sibState);
 
     // localStorage.setItem('state', 'true');
     // localStorage.setItem('bgcolor', '#46957B');
