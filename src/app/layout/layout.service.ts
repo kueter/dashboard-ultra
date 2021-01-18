@@ -15,7 +15,7 @@ export class LayoutService {
   // layoutState = new Subject<any>();
   // bgColor = new Subject<string>();
   layoutState = new BehaviorSubject<boolean>(null);
-  bgColor = new  BehaviorSubject<string>('#46957B');
+  bgColor = new  BehaviorSubject<string>(null);
 
   bread = new BehaviorSubject<any>({path: 'Widgets', icon: 'fa-cube'});
 
