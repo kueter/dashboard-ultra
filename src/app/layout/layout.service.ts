@@ -11,10 +11,12 @@ declare var $: any;
 })
 export class LayoutService {
 
-  state: boolean;
+  state: any;
+
+
 
   layoutState = new BehaviorSubject<any>(null);
-  bgColor = new BehaviorSubject<any>(null);
+  bgColor = new BehaviorSubject<string>(null);
   // layoutState = new BehaviorSubject<boolean>(true);
   // bgColor = new  BehaviorSubject<string>('#46957B');
   colors = [];
@@ -79,6 +81,7 @@ export class LayoutService {
 
     this.storage.get('bgcolor').subscribe((_:string) => {
       if(typeof _ == 'undefined') {
+        this.state = true;
         this.storage.set('bgcolor', '#46957B').subscribe();
         this.bgColor = new BehaviorSubject<string>('#46957B');
       }

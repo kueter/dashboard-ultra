@@ -89,10 +89,12 @@ export class LayoutComponent implements OnInit  {
   state = false;
   mForm: FormGroup;
 
+
   @ViewChild('perfectScroll') perfectScroll: PerfectScrollbarComponent;
 
   constructor(public lservice: LayoutService) {
-
+    // localStorage.setItem('state', 'true');
+    // localStorage.setItem('bgcolor', '#46957B');
   }
 
 
