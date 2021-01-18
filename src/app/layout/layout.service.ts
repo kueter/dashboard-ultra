@@ -16,9 +16,10 @@ export class LayoutService {
   // bgColor = new Subject<string>();
   layoutState = new BehaviorSubject<boolean>(null);
   bgColor = new  BehaviorSubject<string>('#46957B');
-  colors = [];
 
   bread = new BehaviorSubject<any>({path: 'Widgets', icon: 'fa-cube'});
+
+  colors = ['#3171b7','#46957B', '#EB4034','#363534', '#FC9228', '#FC6128', '#820972'];
 
   messages = [
   { track: 'received', message: 'Somebody there, i need help', time: 'Kena • 51 min', img: '../../assets/img/AF2.png' },
@@ -33,15 +34,8 @@ export class LayoutService {
   chatstate = false;
 
 
-  constructor(private storage: StorageMap, private router: Router) {
-    // this.init();
-  }
-
-
-
-  setColor(item: string) {
-      this.bgColor.next(item);
-      this.storage.set('bgcolor',item).subscribe(_=> console.log(_));
+  constructor( private router: Router) {
+    this.init();
   }
 
 
@@ -60,38 +54,6 @@ export class LayoutService {
     ).subscribe((_: any) => {
       this.setBreadcrumb(_?.url);
     });
-
-
-    this.storage.get('state').subscribe((_:any) => {
-        if(typeof _ == 'undefined') {
-          this.storage.set('state', false).subscribe();
-          this.layoutState = new BehaviorSubject<any>(false);
-        }
-
-        this.layoutState.next(_);
-
-    });
-
-    this.storage.get('bgcolor').subscribe((_:string) => {
-      if(typeof _ == 'undefined') {
-        this.storage.set('bgcolor', '#46957B').subscribe();
-        this.bgColor = new BehaviorSubject<string>('#46957B');
-      }
-
-      this.bgColor.next(_);
-    });
-
-    this.storage.get('colors').subscribe((_: string []) => {
-      console.log(_);
-      if(typeof _ == 'undefined') {
-        const colors = ['#3171b7','#46957B', '#EB4034','#363534', '#FC9228', '#FC6128', '#820972'];
-        this.storage.set('colors', colors).subscribe();
-        this.colors = colors;
-      }
-
-      this.colors = _;
-    });
-
   }
 
 

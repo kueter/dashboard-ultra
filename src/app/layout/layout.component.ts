@@ -89,6 +89,7 @@ export class LayoutComponent implements OnInit  {
   state = false;
   mForm: FormGroup;
   sibState: boolean;
+  theme: string;
 
 
   @ViewChild('perfectScroll') perfectScroll: PerfectScrollbarComponent;
@@ -96,10 +97,29 @@ export class LayoutComponent implements OnInit  {
   constructor(public lservice: LayoutService) {
 
     this.sibState = JSON.parse(localStorage.getItem('state'));
-    this.lservice.layoutState.next(this.sibState);
+    this.theme = localStorage.getItem('theme');
 
-    // localStorage.setItem('state', 'true');
-    // localStorage.setItem('bgcolor', '#46957B');
+    console.log(this.theme);
+
+    if(this.sibState != null) {
+      this.lservice.layoutState.next(this.sibState);
+    }
+
+    if(this.sibState == null) {
+        localStorage.setItem('state', 'false');
+        this.sibState = false;
+        this.lservice.layoutState.next(this.sibState);
+    }
+
+
+    if(this.theme != null) {
+      this.lservice.bgColor.next(this.theme);
+    }
+
+    if(this.theme == null) {
+        localStorage.setItem('theme', '#46957B');
+        this.lservice.bgColor.next('#46957B');
+    }
   }
 
 
@@ -109,7 +129,9 @@ export class LayoutComponent implements OnInit  {
     });
   }
 
-
+  setColor(color: string) {
+    this.lservice.bgColor.next(color);
+  }
 
 
   // routes prepare and map with animation trigger
