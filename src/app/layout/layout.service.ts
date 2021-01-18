@@ -13,8 +13,8 @@ export class LayoutService {
 
   state: boolean;
 
-  layoutState: BehaviorSubject<boolean>;
-  bgColor: BehaviorSubject<string>;
+  layoutState = new BehaviorSubject<any>(null);
+  bgColor = new BehaviorSubject<any>(null);
   // layoutState = new BehaviorSubject<boolean>(true);
   // bgColor = new  BehaviorSubject<string>('#46957B');
   colors = [];
@@ -71,7 +71,7 @@ export class LayoutService {
       console.log(_);
         if(typeof _ == 'undefined') {
           this.storage.set('state', false).subscribe();
-          this.layoutState = new BehaviorSubject<boolean>(false);
+          this.layoutState = new BehaviorSubject<any>(false);
         }
 
         this.layoutState.next(_);
